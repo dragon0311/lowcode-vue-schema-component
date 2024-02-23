@@ -2,8 +2,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "css.validate": false,
   "less.validate": false,
@@ -15,5 +15,10 @@
   "volar.codeLens.references": false,
   "volar.completion.autoImportComponent": false,
   "volar.completion.preferredTagNameCase": "kebab",
-  "stylelint.validate": ["css", "less", "postcss", "vue"]
+  "stylelint.validate": ["css", "less", "postcss", "vue"],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#11059D",
+    "titleBar.activeBackground": "#1706DC",
+    "titleBar.activeForeground": "#F9F9FF"
+  }
 }

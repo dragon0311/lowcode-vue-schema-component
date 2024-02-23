@@ -4706,7 +4706,7 @@ var Vue = (function (exports) {
       if (injectOptions) {
         resolveInjections(injectOptions, ctx, checkDuplicateProperties);
       }
-      if (methods) {
+            if (methods) {
         for (const key in methods) {
           const methodHandler = methods[key];
           if (isFunction(methodHandler)) {
@@ -4921,7 +4921,7 @@ var Vue = (function (exports) {
         optionsCache: cache,
         config: { optionMergeStrategies }
       } = instance.appContext;
-      const cached = cache.get(base);
+            const cached = cache.get(base);
       let resolved;
       if (cached) {
         resolved = cached;
@@ -4960,10 +4960,10 @@ var Vue = (function (exports) {
           );
         } else {
           const strat = internalOptionMergeStrats[key] || strats && strats[key];
-          to[key] = strat ? strat(to[key], from[key]) : from[key];
-        }
+                    to[key] = strat ? strat(to[key], from[key]) : from[key];
+                  }
       }
-      return to;
+            return to;
     }
     const internalOptionMergeStrats = {
       data: mergeDataFn,
@@ -5027,7 +5027,7 @@ var Vue = (function (exports) {
       return to ? [...new Set([].concat(to, from))] : from;
     }
     function mergeObjectOptions(to, from) {
-      return to ? extend(/* @__PURE__ */ Object.create(null), to, from) : from;
+            return to ? extend(/* @__PURE__ */ Object.create(null), to, from) : from;
     }
     function mergeEmitsOrPropsOptions(to, from) {
       if (to) {

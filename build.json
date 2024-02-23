@@ -1,7 +1,5 @@
 {
-  "entry": {
-    "preview": "./src/vue/preview.ts"
-  },
+  "entry": "./src/components/index.js",
   "publicPath": "/",
   "externals": {
     "@alifd/next": "var window.Next",
@@ -20,7 +18,10 @@
     "vue": "var window.Vue",
     "naive-ui": "naive"
   },
-  "outputDir": "dist",
+  "outputDir": "lib",
   "vendor": false,
-  "plugins": ["build-plugin-react-app", "./build.plugin.js"]
+  "plugins": [
+    "build-plugin-react-app",
+    "./build.plugin.js"
+  ]
 }

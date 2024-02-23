@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 
 module.exports = ({ onGetWebpackConfig }) => {
@@ -16,25 +17,27 @@ module.exports = ({ onGetWebpackConfig }) => {
       .end()
       .type('javascript/auto');
 
+    config.module
+      .rule('vue')
+      .test(/\.vue$/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .end();
+
+    config.plugin('vue-loader-plugin').use(VueLoaderPlugin);
     config.merge({
-      entry: {
-        editor: require.resolve('./src/editor.ts'),
-      },
+      output: {
+        path: path.resolve(__dirname, 'lib'),
+        library: 'LowCodeSchemaComp',
+        libraryTarget: 'umd',
+      }
     });
 
-    config.plugin('editor').use(HtmlWebpackPlugin, [
+    config.plugin('html').use(HtmlWebpackPlugin, [
       {
         inject: false,
         template: require.resolve('./public/index.html'),
         filename: 'index.html',
-      },
-    ]);
-
-    config.plugin('preview').use(HtmlWebpackPlugin, [
-      {
-        inject: false,
-        template: require.resolve('./public/preview.html'),
-        filename: 'preview.html',
       },
     ]);
 

@@ -1,1585 +1,1417 @@
 {
   "packages": [
     {
-      "package": "naive-ui",
-      "version": "2.32.0",
-      "urls": ["https://unpkg.com/naive-ui@2.32.0/dist/index.prod.js"],
-      "library": "naive"
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.1",
+      "library": "LowcodeMaterialAntVue",
+      "urls": [
+        "http://10.13.4.153:9000/lowcode-resource/lowcode-material-ant-vue_v0.1.1/index.css",
+        "http://10.13.4.153:9000/lowcode-resource/lowcode-material-ant-vue_v0.1.1/index.js"
+      ]
     }
   ],
   "components": [
     {
-      "title": "页面",
-      "componentName": "Page",
-      "props": [
-        {
-          "name": "style",
-          "propType": "object",
-          "defaultValue": {
-            "padding": 12
-          }
-        }
-      ],
-      "configure": {
-        "supports": {
-          "style": true
-        },
-        "component": {
-          "isContainer": true,
-          "disableBehaviors": "*"
-        }
-      }
-    },
-    {
-      "title": "插槽",
-      "componentName": "Slot",
-      "configure": {
-        "component": {
-          "isContainer": true,
-          "disableBehaviors": "*"
-        }
-      }
-    },
-    {
-      "title": "头像",
-      "category": "基础组件",
-      "componentName": "NAvatar",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NAvatar",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "src",
-          "propType": "string"
-        },
-        {
-          "name": "circle",
-          "propType": "bool"
-        },
-        {
-          "name": "round",
-          "propType": "bool"
-        },
-        {
-          "name": "bordered",
-          "propType": "bool"
-        },
-        {
-          "name": "size",
-          "propType": {
-            "type": "oneOfType",
-            "value": ["string", "number"]
-          }
-        }
-      ],
-      "configure": {
-        "props": [
-          {
-            "name": "src",
-            "title": "图片链接地址",
-            "setter": "StringSetter"
-          },
-          {
-            "name": "circle",
-            "title": "是否为原型",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "round",
-            "title": "是否显示圆角",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "bordered",
-            "title": "是否带边框",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "size",
-            "title": "头像大小",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": [
-                  {
-                    "componentName": "RadioGroupSetter",
-                    "props": {
-                      "options": [
-                        { "label": "small", "value": "small" },
-                        { "label": "medium", "value": "medium" },
-                        { "label": "large", "value": "large" }
-                      ],
-                      "defaultValue": "medium"
-                    }
-                  },
-                  "NumberSetter"
-                ]
-              }
-            }
-          }
-        ],
-        "supports": {
-          "style": true,
-          "events": ["onClick", "onError"]
-        }
-      }
-    },
-    {
-      "title": "卡片",
-      "category": "布局组件",
-      "componentName": "NCard",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NCard",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "title",
-          "propType": "string"
-        },
-        {
-          "name": "size",
-          "propType": {
-            "type": "oneOf",
-            "value": ["small", "medium", "large", "huge"]
-          }
-        },
-        {
-          "name": "bordered",
-          "propType": "bool"
-        },
-        {
-          "name": "closable",
-          "propType": "bool"
-        },
-        {
-          "name": "hoverable",
-          "propType": "bool"
-        },
-        {
-          "name": "segmented",
-          "propType": "object"
-        },
-        {
-          "name": "header",
-          "propType": "node"
-        },
-        {
-          "name": "action",
-          "propType": "node"
-        },
-        {
-          "name": "footer",
-          "propType": "node"
-        },
-        {
-          "name": "header-extra",
-          "propType": "node"
-        }
-      ],
-      "configure": {
-        "supports": {
-          "style": true,
-          "events": ["onClose"],
-          "loop": false
-        },
-        "component": {
-          "isContainer": true
-        },
-        "props": [
-          {
-            "type": "group",
-            "title": "卡片样式",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "size",
-                "title": "卡片尺寸",
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "label": "small", "value": "small" },
-                      { "label": "medium", "value": "medium" },
-                      { "label": "large", "value": "large" },
-                      { "label": "huge", "value": "huge" }
-                    ],
-                    "defaultValue": "medium"
-                  }
-                }
-              },
-              {
-                "name": "bordered",
-                "title": "显示边框",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "closable",
-                "title": "显示关闭图标",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "hoverable",
-                "title": "可悬浮",
-                "setter": "BoolSetter"
-              }
-            ]
-          },
-          {
-            "type": "group",
-            "title": "分割线",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "segmented.content",
-                "title": "内容分割线",
-                "setter": {
-                  "componentName": "BoolSetter",
-                  "initialValue": false
-                }
-              },
-              {
-                "name": "segmented.footer",
-                "title": "底部分割线",
-                "setter": {
-                  "componentName": "BoolSetter",
-                  "initialValue": false
-                }
-              },
-              {
-                "name": "segmented.action",
-                "title": "操作区分割线",
-                "setter": {
-                  "componentName": "BoolSetter",
-                  "initialValue": false
-                }
-              }
-            ]
-          },
-          {
-            "title": "卡片内容",
-            "type": "group",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "title",
-                "title": "标题内容",
-                "setter": "StringSetter"
-              },
-              {
-                "name": "header",
-                "title": "头部",
-                "setter": {
-                  "componentName": "SlotSetter",
-                  "initialValue": {
-                    "type": "JSSlot",
-                    "title": "头部",
-                    "value": []
-                  }
-                }
-              },
-              {
-                "name": "header-extra",
-                "title": "头部附加",
-                "setter": {
-                  "componentName": "SlotSetter",
-                  "initialValue": {
-                    "type": "JSSlot",
-                    "title": "头部附加",
-                    "value": []
-                  }
-                }
-              },
-              {
-                "name": "footer",
-                "title": "底部",
-                "setter": {
-                  "componentName": "SlotSetter",
-                  "initialValue": {
-                    "type": "JSSlot",
-                    "title": "底部",
-                    "value": []
-                  }
-                }
-              },
-              {
-                "name": "action",
-                "title": "操作区",
-                "setter": {
-                  "componentName": "SlotSetter",
-                  "initialValue": {
-                    "type": "JSSlot",
-                    "title": "操作区",
-                    "value": []
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "title": "文本",
-      "category": "基础组件",
-      "componentName": "NText",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NText",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "children",
-          "propType": "string"
-        },
-        {
-          "name": "type",
-          "propType": "string"
-        },
-        {
-          "name": "strong",
-          "propType": "bool"
-        },
-        {
-          "name": "italic",
-          "propType": "bool"
-        },
-        {
-          "name": "underline",
-          "propType": "bool"
-        },
-        {
-          "name": "delete",
-          "propType": "bool"
-        },
-        {
-          "name": "code",
-          "propType": "bool"
-        },
-        {
-          "name": "depth",
-          "propType": "string"
-        }
-      ],
-      "configure": {
-        "supports": {
-          "style": true
-        },
-        "props": [
-          {
-            "name": "children",
-            "title": "文本内容",
-            "setter": "StringSetter"
-          },
-          {
-            "name": "type",
-            "title": "排印类型",
-            "setter": {
-              "componentName": "SelectSetter",
-              "props": {
-                "options": [
-                  { "label": "default", "value": "default" },
-                  { "label": "success", "value": "success" },
-                  { "label": "info", "value": "info" },
-                  { "label": "warning", "value": "warning" },
-                  { "label": "error", "value": "error" }
-                ]
-              },
-              "initialValue": "default"
-            }
-          },
-          {
-            "name": "strong",
-            "title": "加粗",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "italic",
-            "title": "斜体",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "underline",
-            "title": "下划线",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "delete",
-            "title": "删除线",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "code",
-            "title": "代码模式",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "depth",
-            "title": "文字深度",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "label": "1", "value": "1" },
-                  { "label": "2", "value": "2" },
-                  { "label": "3", "value": "3" }
-                ]
-              }
-            }
-          },
-          {
-            "name": "tag",
-            "title": "DOM 标签",
-            "setter": {
-              "componentName": "SelectSetter",
-              "props": {
-                "options": [
-                  { "label": "p", "value": "p" },
-                  { "label": "span", "value": "span" },
-                  { "label": "label", "value": "label" }
-                ]
-              },
-              "initialValue": "span"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "title": "间距",
-      "category": "布局组件",
-      "componentName": "NSpace",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NSpace",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "align",
-          "propType": "string"
-        },
-        {
-          "name": "wrap-item",
-          "propType": "bool"
-        },
-        {
-          "name": "justify",
-          "propType": "string"
-        },
-        {
-          "name": "size",
-          "propType": {
-            "type": "oneOfType",
-            "value": ["string", "number"]
-          }
-        },
-        {
-          "name": "inline",
-          "propType": "bool"
-        },
-        {
-          "name": "vertical",
-          "propType": "bool"
-        },
-        {
-          "name": "wrap",
-          "propType": "bool"
-        },
-        {
-          "name": "item-style",
-          "propType": "string"
-        }
-      ],
-      "configure": {
-        "component": {
-          "isContainer": true
-        },
-        "props": [
-          {
-            "name": "align",
-            "title": "垂直排列方式",
-            "setter": {
-              "componentName": "SelectSetter",
-              "props": {
-                "options": [
-                  { "title": "start", "value": "start" },
-                  { "title": "end", "value": "end" },
-                  { "title": "center", "value": "center" },
-                  { "title": "baseline", "value": "baseline" },
-                  { "title": "stretch", "value": "stretch" }
-                ]
-              }
-            },
-            "defaultValue": "start"
-          },
-          {
-            "name": "justify",
-            "title": "水平排列方式",
-            "setter": {
-              "componentName": "SelectSetter",
-              "props": {
-                "options": [
-                  { "title": "start", "value": "start" },
-                  { "title": "end", "value": "end" },
-                  { "title": "center", "value": "center" },
-                  { "title": "space-around", "value": "space-around" },
-                  { "title": "space-between", "value": "space-between" },
-                  { "title": "space-evenly", "value": "space-evenly" }
-                ]
-              }
-            },
-            "defaultValue": "start"
-          },
-          {
-            "name": "size",
-            "title": {
-              "label": "间距大小",
-              "tip": "为数字时，是水平和垂直间距；为数组时，是 [水平间距, 垂直间距]"
-            },
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": [
-                  {
-                    "componentName": "RadioGroupSetter",
-                    "props": {
-                      "options": [
-                        { "label": "small", "value": "small" },
-                        { "label": "medium", "value": "medium" },
-                        { "label": "large", "value": "large" }
-                      ]
-                    }
-                  },
-                  "NumberSetter"
-                ]
-              }
-            },
-            "defaultValue": "medium"
-          },
-          {
-            "name": "wrap-item",
-            "title": "是否包裹元素",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "inline",
-            "title": "是否为行内元素",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "vertical",
-            "title": "是否垂直布局",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "wrap",
-            "title": "是否超出换行",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "item-style",
-            "title": "节点样式",
-            "setter": "StringSetter"
-          }
-        ]
-      }
-    },
-    {
-      "title": "栅格",
-      "category": "布局组件",
-      "componentName": "NGrid",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NGrid",
-        "destructuring": true
-      },
-      "configure": {
-        "component": {
-          "isContainer": true
-        },
-        "props": [
-          {
-            "name": "cols",
-            "title": "显示的栅格数量",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["NumberSetter", "StringSetter"]
-              }
-            },
-            "defaultValue": 24
-          },
-          {
-            "name": "collapsed",
-            "title": "是否默认折叠",
-            "setter": "BoolSetter",
-            "defaultValue": false
-          },
-          {
-            "name": "collapsed-rows",
-            "title": "默认展示的行数",
-            "setter": "NumberSetter",
-            "defaultValue": 1
-          },
-          {
-            "name": "responsive",
-            "title": "响应式策略",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "label": "自身宽度", "value": "self" },
-                  { "label": "屏幕宽度", "value": "screen" }
-                ]
-              }
-            },
-            "defaultValue": "self"
-          },
-          {
-            "name": "item-responsive",
-            "title": "子元素响应式宽度",
-            "setter": "BoolSetter",
-            "defaultValue": false
-          },
-          {
-            "name": "x-gap",
-            "title": "横向间隔槽",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["NumberSetter", "StringSetter"]
-              }
-            },
-            "defaultValue": 0
-          },
-          {
-            "name": "y-gap",
-            "title": "纵向间隔槽",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["NumberSetter", "StringSetter"]
-              }
-            },
-            "defaultValue": 0
-          }
-        ]
-      }
-    },
-    {
-      "title": "栅格项",
-      "category": "布局组件",
-      "componentName": "NGridItem",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NGridItem",
-        "destructuring": true
-      },
-      "configure": {
-        "component": {
-          "isContainer": true
-        },
-        "props": [
-          {
-            "name": "offset",
-            "title": "栅格左侧的间隔格数",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["NumberSetter", "StringSetter"]
-              }
-            },
-            "defaultValue": 0
-          },
-          {
-            "name": "span",
-            "title": "栅格占据的列数",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["NumberSetter", "StringSetter"]
-              }
-            },
-            "defaultValue": 1
-          },
-          {
-            "name": "suffix",
-            "title": "栅格后缀",
-            "setter": "BoolSetter",
-            "defaultValue": false
-          }
-        ]
-      }
-    },
-    {
-      "category": "基础组件",
-      "componentName": "NButton",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NButton",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "children",
-          "propType": "string"
-        },
-        {
-          "name": "text",
-          "propType": "bool"
-        },
-        {
-          "name": "color",
-          "propType": "string"
-        },
-        {
-          "name": "type",
-          "propType": "string"
-        },
-        {
-          "name": "size",
-          "propType": "string"
-        },
-        {
-          "name": "text-color",
-          "propType": "string"
-        },
-        {
-          "name": "dashed",
-          "propType": "bool"
-        },
-        {
-          "name": "secondary",
-          "propType": "bool"
-        },
-        {
-          "name": "circle",
-          "propType": "bool"
-        },
-        {
-          "name": "round",
-          "propType": "bool"
-        },
-        {
-          "name": "disabled",
-          "propType": "bool"
-        },
-        {
-          "name": "ghost",
-          "propType": "bool"
-        },
-        {
-          "name": "loading",
-          "propType": "bool"
-        },
-        {
-          "name": "strong",
-          "propType": "bool"
-        },
-        {
-          "name": "attr-type",
-          "propType": "string"
-        }
-      ],
-      "configure": {
-        "props": [
-          {
-            "title": "按钮功能",
-            "type": "group",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "children",
-                "title": "按钮内容",
-                "setter": "StringSetter"
-              },
-              {
-                "name": "disabled",
-                "title": "是否禁用",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "loading",
-                "title": "显示加载状态",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "attr-type",
-                "title": {
-                  "label": "按钮原生类型",
-                  "tip": "按钮的 DOM 的 type 属性"
-                },
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "title": "button", "value": "button" },
-                      { "title": "submit", "value": "submit" },
-                      { "title": "reset", "value": "reset" }
-                    ]
-                  }
-                },
-                "defaultValue": "button"
-              }
-            ]
-          },
-          {
-            "title": "按钮样式",
-            "type": "group",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "type",
-                "title": "按钮的类型",
-                "setter": {
-                  "componentName": "SelectSetter",
-                  "props": {
-                    "options": [
-                      { "title": "default", "value": "default" },
-                      { "title": "tertiary", "value": "tertiary" },
-                      { "title": "primary", "value": "primary" },
-                      { "title": "success", "value": "success" },
-                      { "title": "info", "value": "info" },
-                      { "title": "warning", "value": "warning" },
-                      { "title": "error", "value": "error" }
-                    ]
-                  }
-                },
-                "defaultValue": "default"
-              },
-              {
-                "name": "text",
-                "title": "文本按钮",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "link",
-                "title": "链接按钮",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "size",
-                "title": "按钮的尺寸",
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "label": "tiny", "value": "tiny" },
-                      { "label": "small", "value": "small" },
-                      { "label": "medium", "value": "medium" },
-                      { "label": "large", "value": "large" }
-                    ]
-                  }
-                },
-                "defaultValue": "medium"
-              },
-              {
-                "name": "bordered",
-                "title": "显示边框",
-                "setter": "BoolSetter",
-                "defaultValue": true
-              },
-              {
-                "name": "circle",
-                "title": "是否为圆形",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "color",
-                "title": "按钮颜色",
-                "setter": "ColorSetter"
-              },
-              {
-                "name": "text-color",
-                "title": "按钮文本颜色",
-                "setter": "ColorSetter"
-              },
-              {
-                "name": "dashed",
-                "title": "虚线边框",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "ghost",
-                "title": "是否透明",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "round",
-                "title": "是否显示圆角",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "secondary",
-                "title": "是否是次要按钮",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "strong",
-                "title": "文字是否加粗",
-                "setter": "BoolSetter"
-              }
-            ]
-          }
-        ],
-        "supports": {
-          "style": true,
-          "loop": true,
-          "events": ["onClick"]
-        }
-      }
-    },
-    {
-      "category": "数据录入",
-      "title": "表单",
-      "componentName": "NForm",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NForm",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "disabled",
-          "propType": "bool"
-        },
-        {
-          "name": "inline",
-          "propType": "bool"
-        },
-        {
-          "name": "label-width",
-          "propType": {
-            "type": "oneOfType",
-            "value": ["string", "number"]
-          }
-        },
-        {
-          "name": "label-align",
-          "propType": {
-            "type": "oneOf",
-            "value": ["left", "right"]
-          }
-        },
-        {
-          "name": "label-placement",
-          "propType": {
-            "type": "oneOf",
-            "value": ["left", "top"]
-          }
-        },
-        {
-          "name": "model",
-          "propType": "object"
-        },
-        {
-          "name": "rules",
-          "propType": "object"
-        },
-        {
-          "name": "show-feedback",
-          "propType": "bool"
-        },
-        {
-          "name": "show-label",
-          "propType": "bool"
-        },
-        {
-          "name": "show-require-mark",
-          "propType": "bool"
-        },
-        {
-          "name": "require-mark-placement",
-          "propType": {
-            "type": "oneOf",
-            "value": ["left", "right", "right-hanging"]
-          }
-        }
-      ],
-      "configure": {
-        "supports": {
-          "style": true,
-          "events": ["onSubmit"]
-        },
-        "component": {
-          "isContainer": true
-        },
-        "props": [
-          {
-            "name": "model",
-            "title": "表项值对象",
-            "setter": "ExpressionSetter"
-          },
-          {
-            "name": "rules",
-            "title": "表项值对象",
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["ExpressionSetter", "JsonSetter"]
-              }
-            }
-          },
-          {
-            "name": "disabled",
-            "title": "是否禁用",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "inline",
-            "title": "行内表单",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "label-width",
-            "title": {
-              "label": "标签宽度",
-              "tip": "在 label-placement 是 'left' 的时候可能会有用，'auto' 意味着 label width 会被自动调整"
-            },
-            "setter": {
-              "componentName": "MixedSetter",
-              "props": {
-                "setters": ["StringSetter", "NumberSetter"]
-              }
-            },
-            "defaultValue": "auto"
-          },
-          {
-            "name": "label-align",
-            "title": "标签文本对齐方式",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "left", "value": "left" },
-                  { "title": "right", "value": "right" }
-                ]
-              }
-            },
-            "defaultValue": "left"
-          },
-          {
-            "name": "label-placement",
-            "title": "标签位置",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "left", "value": "left" },
-                  { "title": "top", "value": "top" }
-                ]
-              }
-            },
-            "defaultValue": "left"
-          },
-          {
-            "name": "show-feedback",
-            "title": "展示校验反馈",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "show-label",
-            "title": "展示标签",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "show-require-mark",
-            "title": "展示必填星号",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "require-mark-placement",
-            "title": "星号位置",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "left", "value": "left" },
-                  { "title": "right", "value": "right" },
-                  { "title": "right-hanging", "value": "right-hanging" }
-                ]
-              }
-            },
-            "defaultValue": "right"
-          }
-        ]
-      }
-    },
-    {
-      "title": "表单项",
-      "category": "数据录入",
-      "componentName": "NFormItem",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NFormItem",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "feedback",
-          "propType": "string"
-        },
-        {
-          "name": "label",
-          "propType": "string"
-        },
-        {
-          "name": "label-align",
-          "propType": "string"
-        },
-        {
-          "name": "label-width",
-          "propType": {
-            "type": "oneOfType",
-            "value": ["string", "number"]
-          }
-        },
-        {
-          "name": "label-placement",
-          "propType": "string"
-        },
-        {
-          "name": "label-style",
-          "propType": {
-            "type": "oneOfType",
-            "value": ["string", "object"]
-          }
-        },
-        {
-          "name": "path",
-          "propType": "string"
-        },
-        {
-          "name": "rule",
-          "propType": "array"
-        },
-        {
-          "name": "rule-path",
-          "propType": "string"
-        },
-        {
-          "name": "show-feedback",
-          "propType": "bool"
-        },
-        {
-          "name": "show-label",
-          "propType": "bool"
-        },
-        {
-          "name": "show-require-mark",
-          "propType": "bool"
-        },
-        {
-          "name": "require-mark-placement",
-          "propType": "string"
-        },
-        {
-          "name": "size",
-          "propType": "string"
-        },
-        {
-          "name": "validation-status",
-          "propType": "string"
-        }
-      ],
-      "configure": {
-        "component": {
-          "isContainer": true
-        },
-        "supports": {
-          "loop": true,
-          "style": true
-        },
-        "props": [
-          {
-            "name": "path",
-            "title": "值路径",
-            "setter": "StringSetter"
-          },
-          {
-            "name": "size",
-            "title": "尺寸",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "small", "value": "small" },
-                  { "title": "medium", "value": "medium" },
-                  { "title": "large", "value": "large" }
-                ]
-              }
-            },
-            "defaultValue": "medium"
-          },
-          {
-            "type": "group",
-            "title": "标签设置",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "label",
-                "title": "标签内容",
-                "setter": "StringSetter"
-              },
-              {
-                "name": "show-label",
-                "title": "显示标签",
-                "setter": "BoolSetter",
-                "defaultValue": true
-              },
-              {
-                "name": "label-align",
-                "title": "文本对齐方式",
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "title": "left", "value": "left" },
-                      { "title": "right", "value": "right" }
-                    ]
-                  }
-                },
-                "defaultValue": "left"
-              },
-              {
-                "name": "label-width",
-                "title": {
-                  "label": "标签宽度",
-                  "tip": "在 label-placement 是 'left' 的时候可能会有用，'auto' 意味着 label width 会被自动调整"
-                },
-                "setter": {
-                  "componentName": "MixedSetter",
-                  "props": {
-                    "setters": ["StringSetter", "NumberSetter"]
-                  }
-                },
-                "defaultValue": "auto"
-              },
-              {
-                "name": "label-placement",
-                "title": "标签位置",
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "title": "left", "value": "left" },
-                      { "title": "top", "value": "top" }
-                    ]
-                  }
-                },
-                "defaultValue": "left"
-              },
-              {
-                "name": "label-style",
-                "title": "标签样式",
-                "setter": {
-                  "componentName": "MixedSetter",
-                  "props": {
-                    "setters": ["StringSetter", "JsonSetter"]
-                  }
-                }
-              },
-              {
-                "name": "show-require-mark",
-                "title": "显示必填星号",
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "require-mark-placement",
-                "title": "必填星号位置",
-                "setter": {
-                  "componentName": "RadioGroupSetter",
-                  "props": {
-                    "options": [
-                      { "title": "left", "value": "left" },
-                      { "title": "right", "value": "right" },
-                      { "title": "right-hanging", "value": "right-hanging" }
-                    ]
-                  }
-                },
-                "defaultValue": "right"
-              }
-            ]
-          },
-          {
-            "type": "group",
-            "title": "校验设置",
-            "extraProps": {
-              "display": "block"
-            },
-            "items": [
-              {
-                "name": "rule",
-                "title": "校验规则",
-                "setter": {
-                  "componentName": "MixedSetter",
-                  "props": {
-                    "setters": ["ExpressionSetter", "JsonSetter"]
-                  }
-                }
-              },
-              {
-                "name": "feedback",
-                "title": "校验错误信息",
-                "setter": "StringSetter"
-              },
-              {
-                "name": "show-feedback",
-                "title": {
-                  "label": "显示错误信息",
-                  "tip": "当校验失败时，是否显示错误信息"
-                },
-                "setter": "BoolSetter"
-              },
-              {
-                "name": "rule-path",
-                "title": "规则路径",
-                "setter": "StringSetter"
-              },
-              {
-                "name": "validation-status",
-                "title": "校验状态",
-                "setter": {
-                  "componentName": "MixedSetter",
-                  "props": {
-                    "setters": [
-                      {
-                        "componentName": "RadioGroupSetter",
-                        "props": {
-                          "options": [
-                            { "title": "error", "value": "error" },
-                            { "title": "success", "value": "success" },
-                            { "title": "warning", "value": "warning" }
-                          ]
-                        }
-                      },
-                      "ExpressionSetter",
-                      "StringSetter"
-                    ]
-                  }
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "category": "数据录入",
-      "title": "文本输入",
-      "componentName": "NInput",
-      "npm": {
-        "package": "naive-ui",
-        "version": "2.30.6",
-        "exportName": "NInput",
-        "destructuring": true
-      },
-      "props": [
-        {
-          "name": "autofocus",
-          "propType": "bool"
-        },
-        {
-          "name": "disabled",
-          "propType": "bool"
-        },
-        {
-          "name": "readonly",
-          "propType": "bool"
-        },
-        {
-          "name": "clearable",
-          "propType": "bool"
-        },
-        {
-          "name": "type",
-          "propType": {
-            "type": "oneOf",
-            "value": ["text", "password", "textarea"]
-          }
-        },
-        {
-          "name": "status",
-          "propType": {
-            "type": "oneOf",
-            "value": ["success", "warning", "error"]
-          }
-        },
-        {
-          "name": "placeholder",
-          "propType": "string"
-        },
-        {
-          "name": "value",
-          "propType": "string"
-        },
-        {
-          "name": "show-password-on",
-          "propType": {
-            "type": "oneOf",
-            "value": ["click", "mousedown"]
-          }
-        }
-      ],
-      "configure": {
-        "props": [
-          {
-            "name": "placeholder",
-            "title": "输入占位符",
-            "setter": "StringSetter"
-          },
-          {
-            "name": "v-model:value",
-            "title": "输入值",
-            "setter": "ExpressionSetter"
-          },
-          {
-            "name": "type",
-            "title": "输入框类型",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "text", "value": "text" },
-                  { "title": "password", "value": "password" },
-                  { "title": "textarea", "value": "textarea" }
-                ]
-              }
-            }
-          },
-          {
-            "name": "autofocus",
-            "title": "自动获取焦点",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "disabled",
-            "title": "是否禁用",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "readonly",
-            "title": "是否只读",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "clearable",
-            "title": "是否可清空",
-            "setter": "BoolSetter"
-          },
-          {
-            "name": "show-password-on",
-            "title": "显示密码的时机",
-            "setter": {
-              "componentName": "RadioGroupSetter",
-              "props": {
-                "options": [
-                  { "title": "click", "value": "click" },
-                  { "title": "mousedown", "value": "mousedown" }
-                ]
-              }
-            },
-            "defaultValue": "click"
-          }
-        ],
-        "supports": {
-          "events": [
-            "onMousedown",
-            "onKeydown",
-            "onKeydown",
-            "onKeyup",
-            "onInput",
-            "onFocus",
-            "onBlur",
-            "onClear",
-            "onClick",
-            "onChange",
-            "onUpdateValue"
-          ],
-          "loop": true,
-          "style": true
-        }
+      "exportName": "LowcodeMaterialAntVueMeta",
+      "url": "http://10.13.4.153:9000/lowcode-resource/lowcode-material-ant-vue_v0.1.1/meta.js",
+      "package": {
+        "npm": "lowcode-material-ant-vue"
       }
     }
   ],
   "componentList": [
     {
-      "title": "基础组件",
+      "title": "按钮组件",
       "children": [
         {
-          "title": "文本",
-          "library": "naive-ui",
+          "componentName": "AButton",
+          "title": "按钮",
           "snippets": [
             {
-              "title": "文本",
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/text.svg",
+              "title": "主按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-1.png",
               "schema": {
-                "componentName": "NText",
+                "componentName": "AButton",
                 "props": {
-                  "children": "文本内容"
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "primary",
+                  "children": "主按钮",
+                  "htmlType": "button",
+                  "size": "middle",
+                  "shape": "default",
+                  "block": false
+                }
+              }
+            },
+            {
+              "title": "查询按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-1.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "marginLeft": "10px"
+                  },
+                  "type": "primary",
+                  "children": "查询",
+                  "htmlType": "button",
+                  "size": "middle",
+                  "shape": "default",
+                  "block": false
+                }
+              }
+            },
+            {
+              "title": "重置按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-2.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "margin": "0 30px 0 0",
+                    "fontSize": "12px",
+                    "borderColor": "#fff",
+                    "width": "44px",
+                    "height": "22px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "color": "#5597f9"
+                  },
+                  "type": "default",
+                  "children": "重置",
+                  "htmlType": "button",
+                  "size": "middle",
+                  "shape": "default",
+                  "block": false
+                }
+              }
+            },
+            {
+              "title": "次按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-2.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "default",
+                  "children": "次按钮"
+                }
+              }
+            },
+            {
+              "title": "危险按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-3.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "danger",
+                  "children": "危险按钮"
+                }
+              }
+            },
+            {
+              "title": "文字按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-4.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "text",
+                  "children": "文字按钮"
+                }
+              }
+            },
+            {
+              "title": "虚框按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-5.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "dashed",
+                  "children": "虚框按钮"
+                }
+              }
+            },
+            {
+              "title": "链接按钮",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/button/button-6.png",
+              "schema": {
+                "componentName": "AButton",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px",
+                    "fontSize": "12px",
+                    "width": "66px",
+                    "height": "24px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "type": "link",
+                  "children": "链接按钮"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "导航",
+      "children": [
+        {
+          "componentName": "AAffix",
+          "title": "固钉",
+          "snippets": [
+            {
+              "title": "固钉",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*YSm4RI3iOJ8AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AAffix",
+                "props": {
+                  "offsetTop": 100
+                },
+                "children": [
+                  {
+                    "componentName": "AButton",
+                    "props": {
+                      "children": "Affix Top"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ABreadcrumb",
+          "title": "面包屑",
+          "snippets": [
+            {
+              "title": "面包屑",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*I5a2Tpqs3y0AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ABreadcrumb",
+                "props": {
+                  "routes": [
+                    {
+                      "path": "home",
+                      "breadcrumbName": "Home"
+                    },
+                    {
+                      "path": "order",
+                      "breadcrumbName": "Order"
+                    },
+                    {
+                      "path": "app",
+                      "breadcrumbName": "An application"
+                    }
+                  ],
+                  "itemRender": {
+                    "type": "JSSlot",
+                    "params": [
+                      "route",
+                      "params",
+                      "routes",
+                      "paths"
+                    ],
+                    "value": [
+                      {
+                        "componentName": "ATypographyLink",
+                        "props": {
+                          "href": {
+                            "type": "JSExpression",
+                            "value": "this.route.path"
+                          },
+                          "children": {
+                            "type": "JSExpression",
+                            "value": "this.route.breadcrumbName"
+                          }
+                        }
+                      }
+                    ]
+                  }
                 }
               }
             }
           ]
         },
         {
-          "componentName": "NAvatar",
-          "library": "naive-ui",
+          "componentName": "ADropdown",
+          "snippets": [
+            {
+              "title": "下拉菜单",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*mBBcQ6goljkAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ADropdown",
+                "props": {
+                  "overlay": {
+                    "type": "JSSlot",
+                    "value": [
+                      {
+                        "componentName": "AMenu",
+                        "props": {
+                          "items": [
+                            {
+                              "key": "timeLinei5wd",
+                              "category": "Item",
+                              "title": "菜单名"
+                            }
+                          ]
+                        },
+                        "children": [
+                          {
+                            "componentName": "AMenuItem",
+                            "id": "node_ocky01yzdq3",
+                            "props": {
+                              "key": "timeLinei5we",
+                              "category": "Item",
+                              "title": "菜单名",
+                              "children": "菜单名"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "children": [
+                  {
+                    "componentName": "AButton",
+                    "props": {
+                      "type": "link",
+                      "children": {
+                        "type": "JSSlot",
+                        "value": [
+                          {
+                            "componentName": "ATypographyText",
+                            "props": {
+                              "children": "Hover me",
+                              "style": {
+                                "color": "inherit"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AMenu",
+          "title": "菜单",
+          "snippets": [
+            {
+              "title": "水平菜单",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KeyQQL5iKkkAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AMenu",
+                "props": {
+                  "style": {
+                    "height": "200px",
+                    "lineHeight": "200px",
+                    "paddingLeft": "10px"
+                  },
+                  "mode": "inline",
+                  "defaultSelectedKeys": [
+                    "sub1"
+                  ],
+                  "defaultOpenKeys": [
+                    "sub1"
+                  ],
+                  "theme": "light",
+                  "items": [
+                    {
+                      "key": "sub1",
+                      "category": "AMenuItem",
+                      "children": "菜单名1"
+                    },
+                    {
+                      "key": "sub2",
+                      "category": "AMenuItem",
+                      "children": "菜单名2"
+                    },
+                    {
+                      "key": "sub3",
+                      "category": "AMenuItem",
+                      "children": "菜单名3"
+                    }
+                  ],
+                  "selectedKeys": [
+                    "sub1"
+                  ],
+                  "triggerSubMenuAction": "click"
+                }
+              }
+            },
+            {
+              "title": "垂直菜单",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KeyQQL5iKkkAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AMenu",
+                "props": {
+                  "style": {
+                    "width": "160px",
+                    "height": "100%",
+                    "lineHeight": "100%"
+                  },
+                  "mode": "vertical",
+                  "defaultSelectedKeys": [
+                    "sub1"
+                  ],
+                  "defaultOpenKeys": [
+                    "sub1"
+                  ],
+                  "theme": "light",
+                  "items": [
+                    {
+                      "key": "sub1",
+                      "category": "AMenuItem",
+                      "children": "菜单名1"
+                    },
+                    {
+                      "key": "sub2",
+                      "category": "AMenuItem",
+                      "children": "菜单名2"
+                    },
+                    {
+                      "key": "sub3",
+                      "category": "AMenuItem",
+                      "children": "菜单名3"
+                    }
+                  ],
+                  "selectedKeys": [
+                    "sub1"
+                  ],
+                  "triggerSubMenuAction": "click"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "APageHeader",
+          "title": "页头",
+          "snippets": [
+            {
+              "title": "页头",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/6bKE0Cq0R/PageHeader.svg",
+              "schema": {
+                "componentName": "APageHeader",
+                "props": {
+                  "title": "Title",
+                  "subTitle": "lyl test for page-header"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "APagination",
+          "title": "分页",
+          "snippets": [
+            {
+              "title": "分页",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*8y_iTJGY_aUAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "APagination",
+                "style": {
+                  "width": "100%",
+                  "height": "36px",
+                  "display": "flex",
+                  "alignItems": "center",
+                  "backgroundColor": "#fff",
+                  "borderTop": "1px solid #EBEEF5",
+                  "padding": "0 10px"
+                },
+                "props": {
+                  "pageSize": 10,
+                  "total": 50,
+                  "current": 1,
+                  "showSizeChanger": true,
+                  "hideOnSinglePage": false,
+                  "showQuickJumper": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASteps",
+          "title": "步骤条",
+          "snippets": [
+            {
+              "title": "步骤条",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*677sTqCpE3wAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ASteps",
+                "props": {
+                  "current": 1
+                },
+                "children": [
+                  {
+                    "componentName": "AStepsStep",
+                    "props": {
+                      "title": "Finished",
+                      "description": "This is a description."
+                    }
+                  },
+                  {
+                    "componentName": "AStepsStep",
+                    "props": {
+                      "title": "In Progress",
+                      "subTitle": "Left 00:00:08",
+                      "description": "This is a description."
+                    }
+                  },
+                  {
+                    "componentName": "AStepsStep",
+                    "props": {
+                      "title": "Waiting",
+                      "description": "This is a description."
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "基础组件",
+      "children": [
+        {
+          "componentName": "AAnchor",
+          "title": "锚点",
+          "snippets": [
+            {
+              "title": "锚点",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*TBTSR4PyVmkAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AAnchor",
+                "props": {},
+                "children": [
+                  {
+                    "componentName": "AAnchorLink",
+                    "props": {
+                      "title": "Document"
+                    }
+                  },
+                  {
+                    "componentName": "AAnchorLink",
+                    "props": {
+                      "title": "API"
+                    }
+                  },
+                  {
+                    "componentName": "AAnchorLink",
+                    "props": {
+                      "title": "Demo"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AIcon",
+          "title": "图标",
+          "snippets": [
+            {
+              "title": "图标",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*PdAYS7anRpoAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AIcon",
+                "props": {
+                  "type": "SmileOutlined",
+                  "size": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASelect",
+          "title": "选择器",
+          "snippets": [
+            {
+              "title": "选择器",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*zo76T7KQx2UAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ASelect",
+                "props": {
+                  "style": {
+                    "width": "220px",
+                    "height": "22px",
+                    "display": "inline-flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  },
+                  "options": [
+                    {
+                      "label": "选项一",
+                      "value": "1"
+                    },
+                    {
+                      "label": "选项二",
+                      "value": "2"
+                    },
+                    {
+                      "label": "选项三",
+                      "value": "3"
+                    }
+                  ],
+                  "bordered": true,
+                  "allowCreate": false,
+                  "autoFocus": false,
+                  "labelInValue": false,
+                  "placeholder": "请选择",
+                  "filterOption": false,
+                  "autoClearSearchValue": true,
+                  "showArrow": true,
+                  "showSearch": true,
+                  "size": "default",
+                  "tokenSeparators": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASwitch",
+          "title": "开关",
+          "snippets": [
+            {
+              "title": "开关",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*rtArRpBNDZcAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ASwitch",
+                "props": {
+                  "defaultChecked": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "数据展示",
+      "children": [
+        {
+          "componentName": "AAvatar",
           "title": "头像",
           "snippets": [
             {
               "title": "头像",
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/avatar.png",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*JJBSS5lBG4IAAAAAAAAAAAAADrJ8AQ/original",
               "schema": {
-                "componentName": "NAvatar",
+                "componentName": "AAvatar",
                 "props": {
-                  "circle": true,
-                  "round": false,
-                  "src": "https://v2.vuejs.org/images/logo.svg",
-                  "size": "medium"
+                  "src": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+                  "size": "default"
                 }
               }
             }
           ]
         },
         {
-          "componentName": "NButton",
-          "library": "naive-ui",
-          "title": "按钮",
+          "componentName": "ACalendar",
+          "title": "日历",
           "snippets": [
             {
-              "title": "按钮",
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/button.png",
+              "title": "日历",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*nF6_To7pDSAAAAAAAAAAAAAADrJ8AQ/original",
               "schema": {
-                "componentName": "NButton",
+                "componentName": "ACalendar",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ACarousel",
+          "title": "走马灯",
+          "snippets": [
+            {
+              "title": "走马灯",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*bPMSSqbaTMkAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ACarousel",
+                "children": [
+                  {
+                    "componentName": "ACard",
+                    "props": {
+                      "key": "panel 1"
+                    }
+                  },
+                  {
+                    "componentName": "ACard",
+                    "props": {
+                      "key": "panel 2"
+                    }
+                  },
+                  {
+                    "componentName": "ACard",
+                    "props": {
+                      "key": "panel 3"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ACollapse",
+          "title": "折叠面板",
+          "snippets": [
+            {
+              "title": "折叠面板",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*B7HKR5OBe8gAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ACollapse",
                 "props": {
-                  "children": "按钮"
+                  "defaultActiveKey": [
+                    "collapse-item-1"
+                  ]
+                },
+                "children": [
+                  {
+                    "componentName": "ACollapsePanel",
+                    "props": {
+                      "header": "折叠项1",
+                      "key": "collapse-item-1"
+                    }
+                  },
+                  {
+                    "componentName": "ACollapsePanel",
+                    "props": {
+                      "header": "折叠项2",
+                      "key": "collapse-item-2"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AComment",
+          "title": "评论",
+          "snippets": [
+            {
+              "title": "评论",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/ILhxpGzBO/Comment.svg",
+              "schema": {
+                "componentName": "AComment",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ADescriptions",
+          "title": "描述列表",
+          "snippets": [
+            {
+              "title": "描述列表",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*fHdlTpif6XQAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ADescriptions",
+                "props": {
+                  "title": "用户信息",
+                  "items": [
+                    {
+                      "label": "用户名",
+                      "children": "chenyang"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AEmpty",
+          "title": "空状态",
+          "snippets": [
+            {
+              "title": "空状态",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*ZdiZSLzEV0wAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AEmpty",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AImage",
+          "title": "图片",
+          "snippets": [
+            {
+              "title": "图片",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AImage",
+                "props": {
+                  "src": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAAAAAAAADrJ8AQ/original",
+                  "width": 120,
+                  "height": 120
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AList",
+          "title": "简单列表",
+          "snippets": [
+            {
+              "title": "简单列表",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AList",
+                "props": {
+                  "dataSource": [
+                    {
+                      "id": 1,
+                      "text": "Racing car sprays burning fuel into crowd."
+                    },
+                    {
+                      "id": 2,
+                      "text": "Japanese princess to wed commoner."
+                    },
+                    {
+                      "id": 3,
+                      "text": "Australian walks 100km after outback crash."
+                    },
+                    {
+                      "id": 4,
+                      "text": "Man charged over missing wedding girl."
+                    },
+                    {
+                      "id": 5,
+                      "text": "Los Angeles battles huge wildfires."
+                    }
+                  ],
+                  "renderItem": {
+                    "type": "JSSlot",
+                    "params": [
+                      "item"
+                    ],
+                    "value": [
+                      {
+                        "componentName": "AListItem",
+                        "props": {},
+                        "children": {
+                          "componentName": "ATypographyText",
+                          "props": {
+                            "children": "文本"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "header": {
+                    "type": "JSSlot",
+                    "value": [
+                      {
+                        "componentName": "ATypographyText",
+                        "props": {
+                          "children": "列表头部"
+                        }
+                      }
+                    ]
+                  },
+                  "footer": {
+                    "type": "JSSlot",
+                    "value": [
+                      {
+                        "componentName": "ATypographyText",
+                        "props": {
+                          "children": "列表底部"
+                        }
+                      }
+                    ]
+                  },
+                  "itemLayout": "horizontal",
+                  "size": "default",
+                  "bordered": true,
+                  "split": true,
+                  "pagination": {
+                    "pageSize": 5,
+                    "total": 10,
+                    "current": 1
+                  }
+                }
+              }
+            },
+            {
+              "title": "基础列表",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AList",
+                "props": {
+                  "dataSource": [
+                    {
+                      "id": 1,
+                      "title": "Ant Design Title 1",
+                      "avatar": "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
+                      "description": "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                    },
+                    {
+                      "id": 2,
+                      "title": "Ant Design Title 2",
+                      "avatar": "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
+                      "description": "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                    },
+                    {
+                      "id": 3,
+                      "title": "Ant Design Title 3",
+                      "avatar": "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
+                      "description": "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                    },
+                    {
+                      "id": 4,
+                      "title": "Ant Design Title 4",
+                      "avatar": "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
+                      "description": "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                    },
+                    {
+                      "id": 5,
+                      "title": "Ant Design Title 5",
+                      "avatar": "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png",
+                      "description": "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                    }
+                  ],
+                  "renderItem": {
+                    "type": "JSSlot",
+                    "params": [
+                      "item"
+                    ],
+                    "value": [
+                      {
+                        "componentName": "AListItem",
+                        "props": {},
+                        "children": {
+                          "componentName": "AListItemMeta",
+                          "props": {
+                            "avatar": {
+                              "type": "JSSlot",
+                              "value": [
+                                {
+                                  "componentName": "AAvatar",
+                                  "props": {
+                                    "src": {
+                                      "type": "JSExpression",
+                                      "value": "this.item.avatar"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            "title": {
+                              "type": "JSSlot",
+                              "value": [
+                                {
+                                  "componentName": "ATypographyLink",
+                                  "props": {
+                                    "children": {
+                                      "type": "JSExpression",
+                                      "value": "this.item.title"
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            "description": {
+                              "type": "JSSlot",
+                              "value": [
+                                {
+                                  "componentName": "ATypographyText",
+                                  "props": {
+                                    "children": {
+                                      "type": "JSExpression",
+                                      "value": "this.item.description"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "itemLayout": "horizontal",
+                  "size": "default",
+                  "bordered": true,
+                  "split": true,
+                  "pagination": {
+                    "pageSize": 10,
+                    "total": 15,
+                    "current": 1
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AMentions",
+          "title": "提及",
+          "snippets": [
+            {
+              "title": "提及",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*e4bXT7Uhi9YAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AMentions",
+                "props": {
+                  "getPopupContainer": "()=>document.querySelector('#lce-container')"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ARate",
+          "title": "评分",
+          "snippets": [
+            {
+              "title": "评分",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*oyOcTrB12_YAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ARate",
+                "props": {
+                  "value": 3
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AStatistic",
+          "title": "统计数值",
+          "snippets": [
+            {
+              "title": "统计数值",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*YL7PRYNtH-4AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AStatistic",
+                "props": {
+                  "title": "Active Users",
+                  "value": 16589
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "标签",
+          "title": "标签",
+          "snippets": [
+            {
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*72NDQqXkyOEAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "标签",
+                "props": {
+                  "type": "inline",
+                  "activeKey": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATabPane",
+          "title": "标签页",
+          "snippets": [
+            {
+              "title": "标签页",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*72NDQqXkyOEAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATabPane",
+                "props": {
+                  "type": "inline",
+                  "activeKey": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATable",
+          "title": "表格",
+          "snippets": [
+            {
+              "title": "表格",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/f-SbcX2Lx/Table.svg",
+              "schema": {
+                "componentName": "ATable",
+                "props": {
+                  "style": {
+                    "backgroundColor": "#fff",
+                    "marginTop": "4px",
+                    "minHeight": "240px",
+                    "color": "#000"
+                  },
+                  "showHeader": true,
+                  "size": "small",
+                  "dataSource": [
+                    {
+                      "id": "1",
+                      "name": "毛不易",
+                      "age": 32,
+                      "address": "西湖区湖底公园1号"
+                    },
+                    {
+                      "id": "2",
+                      "name": "邓紫棋",
+                      "age": 28,
+                      "address": "滨江区网商路699号"
+                    }
+                  ],
+                  "columns": [
+                    {
+                      "title": "序号",
+                      "dataIndex": "index",
+                      "align": "center",
+                      "fixed": "",
+                      "ellipsis": false,
+                      "filterSearch": false,
+                      "filterMultiple": true,
+                      "customRender": {
+                        "type": "JSSlot",
+                        "params": [
+                          "data"
+                        ],
+                        "value": [
+                          {
+                            "componentName": "ATypographyText",
+                            "props": {
+                              "children": {
+                                "type": "JSExpression",
+                                "value": "this.data.index+1",
+                                "mock": "text"
+                              },
+                              "code": false,
+                              "delete": false,
+                              "underline": false,
+                              "strong": false,
+                              "style": {
+                                "color": "#000"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "width": 60
+                    },
+                    {
+                      "title": "姓名",
+                      "dataIndex": "name",
+                      "key": "name",
+                      "align": "center"
+                    },
+                    {
+                      "title": "年龄",
+                      "dataIndex": "age",
+                      "key": "age",
+                      "align": "center"
+                    },
+                    {
+                      "title": "地址",
+                      "dataIndex": "address",
+                      "key": "address",
+                      "align": "center"
+                    },
+                    {
+                      "title": "操作",
+                      "fixed": "right",
+                      "align": "center",
+                      "filterSearch": false,
+                      "filterMultiple": true,
+                      "customRender": {
+                        "type": "JSSlot",
+                        "params": [
+                          "data"
+                        ],
+                        "value": [
+                          {
+                            "componentName": "AButton",
+                            "props": {
+                              "type": "link",
+                              "children": "详情",
+                              "htmlType": "button",
+                              "size": "small",
+                              "shape": "default",
+                              "block": false,
+                              "ghost": false,
+                              "danger": false,
+                              "style": {
+                                "fontSize": "12px"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "class": "operation-list"
+                    }
+                  ],
+                  "rowKey": "id",
+                  "pagination": false,
+                  "getPopupContainer": "()=>document.querySelector('#lce-container')"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATimePicker",
+          "title": "时间选择框",
+          "snippets": [
+            {
+              "title": "时间选择框",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*kGmGSLk_1fwAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATimePicker",
+                "props": {
+                  "showNow": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATimeline",
+          "title": "时间轴",
+          "snippets": [
+            {
+              "title": "时间轴",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FkTySqNt3sYAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATimeline",
+                "props": {
+                  "steps": [
+                    {
+                      "key": "timeLinei5wd",
+                      "label": "时间轴1"
+                    },
+                    {
+                      "key": "timeLinei5wx",
+                      "label": "时间轴2"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATooltip",
+          "title": "文字提示",
+          "snippets": [
+            {
+              "title": "文字提示",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*3u9eSZO_4c0AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATooltip",
+                "props": {
+                  "title": "提示内容"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATransfer",
+          "title": "穿梭框",
+          "snippets": [
+            {
+              "title": "穿梭框",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EAApQ5ephigAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATransfer",
+                "props": {
+                  "dataSource": [
+                    {
+                      "key": 11111111,
+                      "title": "测试数据1"
+                    },
+                    {
+                      "key": 22222222,
+                      "title": "测试数据2"
+                    },
+                    {
+                      "key": 33333333,
+                      "title": "测试数据3"
+                    }
+                  ],
+                  "render": {
+                    "type": "JSFunction",
+                    "value": "function renderItem(record, extParams) {\nreturn record.title;\n}"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATreeSelect",
+          "title": "树形选择控件",
+          "snippets": [
+            {
+              "title": "树形选择控件",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*Ag9_Q6ArswEAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATreeSelect",
+                "props": {
+                  "treeData": [
+                    {
+                      "title": "parent 0",
+                      "value": "0-0",
+                      "children": [
+                        {
+                          "title": "leaf 0-0",
+                          "value": "0-0-0",
+                          "isLeaf": true
+                        },
+                        {
+                          "title": "leaf 0-1",
+                          "value": "0-0-1",
+                          "isLeaf": true
+                        }
+                      ]
+                    },
+                    {
+                      "title": "parent 1",
+                      "value": "0-1",
+                      "children": [
+                        {
+                          "title": "leaf 1-0",
+                          "value": "0-1-0",
+                          "isLeaf": true
+                        },
+                        {
+                          "title": "leaf 1-1",
+                          "value": "0-1-1",
+                          "isLeaf": true
+                        }
+                      ]
+                    }
+                  ],
+                  "treeDefaultExpandAll": true,
+                  "placeholder": "请选择",
+                  "style": {
+                    "width": "300px"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATree",
+          "title": "树形控件",
+          "snippets": [
+            {
+              "title": "树形控件",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*DfTMRYSDngEAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATree",
+                "props": {
+                  "treeData": [
+                    {
+                      "title": "parent 0",
+                      "key": "0-0",
+                      "children": [
+                        {
+                          "title": "leaf 0-0",
+                          "key": "0-0-0",
+                          "isLeaf": true
+                        },
+                        {
+                          "title": "leaf 0-1",
+                          "key": "0-0-1",
+                          "isLeaf": true
+                        }
+                      ]
+                    },
+                    {
+                      "title": "parent 1",
+                      "key": "0-1",
+                      "children": [
+                        {
+                          "title": "leaf 1-0",
+                          "key": "0-1-0",
+                          "isLeaf": true
+                        },
+                        {
+                          "title": "leaf 1-1",
+                          "key": "0-1-1",
+                          "isLeaf": true
+                        }
+                      ]
+                    }
+                  ],
+                  "defaultExpandAll": true
                 }
               }
             }
@@ -1588,59 +1420,982 @@
       ]
     },
     {
-      "title": "布局组件",
+      "title": "反馈",
       "children": [
         {
-          "componentName": "NCard",
-          "library": "naive-ui",
+          "componentName": "AAlert",
+          "title": "提示",
           "snippets": [
             {
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/card.png",
-              "title": "卡片",
+              "title": "成功提示",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/alert/alert-1.png",
               "schema": {
-                "componentName": "NCard",
+                "componentName": "AAlert",
+                "props": {
+                  "style": {
+                    "color": "#707070",
+                    "height": "24px",
+                    "padding": "0 4px",
+                    "boxSizing": "border-box",
+                    "border": "1px solid transparent"
+                  },
+                  "message": "",
+                  "description": "Detailed description and advice about successful copywriting.",
+                  "type": "success",
+                  "showIcon": true
+                }
+              }
+            },
+            {
+              "title": "信息提示",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/alert/alert-2.png",
+              "schema": {
+                "componentName": "AAlert",
+                "props": {
+                  "style": {
+                    "color": "#707070",
+                    "height": "24px",
+                    "padding": "0 4px",
+                    "boxSizing": "border-box",
+                    "border": "1px solid transparent"
+                  },
+                  "message": "",
+                  "description": "Additional description and information about copywriting.",
+                  "type": "info",
+                  "showIcon": true
+                }
+              }
+            },
+            {
+              "title": "警告提示",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/alert/alert-3.png",
+              "schema": {
+                "componentName": "AAlert",
+                "props": {
+                  "style": {
+                    "backgroundColor": "#fef8e9",
+                    "color": "#707070",
+                    "height": "24px",
+                    "padding": "0 4px",
+                    "boxSizing": "border-box",
+                    "border": "1px solid transparent"
+                  },
+                  "message": "",
+                  "description": "This is a warning notice about copywriting.",
+                  "type": "warning",
+                  "showIcon": true,
+                  "banner": false,
+                  "closable": true,
+                  "icon": {
+                    "type": "JSSlot",
+                    "value": [
+                      {
+                        "componentName": "AIcon",
+                        "props": {
+                          "type": "InfoCircleFilled",
+                          "size": 12,
+                          "color": "#f7ba2b",
+                          "rotate": 0,
+                          "spin": false
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "title": "错误提示",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/alert/alert-4.png",
+              "schema": {
+                "componentName": "AAlert",
+                "props": {
+                  "style": {
+                    "color": "#707070",
+                    "height": "24px",
+                    "padding": "0 4px",
+                    "boxSizing": "border-box",
+                    "border": "1px solid transparent"
+                  },
+                  "message": "",
+                  "description": "This is an error message about copywriting.",
+                  "type": "error",
+                  "showIcon": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ADrawer",
+          "title": "抽屉",
+          "snippets": [
+            {
+              "title": "侧边抽屉",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/drawer/drawer-1.png",
+              "schema": {
+                "componentName": "ADrawer",
+                "props": {
+                  "title": "基础侧边抽屉",
+                  "open": true,
+                  "visible": true,
+                  "placement": "right",
+                  "destroyOnClose": true,
+                  "getContainer": "()=>document.querySelector('#lce-container')"
+                },
+                "children": [
+                  {
+                    "componentName": "ATypographyParagraph",
+                    "children": "Some contents..."
+                  }
+                ]
+              }
+            },
+            {
+              "title": "底部抽屉",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/drawer/drawer-2.png",
+              "schema": {
+                "componentName": "ADrawer",
+                "props": {
+                  "title": "底部抽屉",
+                  "open": true,
+                  "visible": true,
+                  "placement": "bottom",
+                  "destroyOnClose": true
+                },
+                "children": [
+                  {
+                    "componentName": "ATypographyParagraph",
+                    "children": "Some contents..."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AModal",
+          "title": "弹窗",
+          "snippets": [
+            {
+              "title": "弹窗-普通型",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/modal/modal-1.png",
+              "schema": {
+                "componentName": "AModal",
+                "props": {
+                  "style": {
+                    "width": "650px"
+                  },
+                  "title": "Basic Modal",
+                  "okText": "确认",
+                  "cancelText": "取消",
+                  "destroyOnClose": true,
+                  "getContainer": "()=>document.querySelector('#lce-container')"
+                },
+                "children": []
+              }
+            },
+            {
+              "title": "弹窗-隐藏底部",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/modal/modal-1.png",
+              "schema": {
+                "componentName": "AModal",
+                "props": {
+                  "style": {
+                    "width": "650px"
+                  },
+                  "title": "Basic Modal",
+                  "okText": "确认",
+                  "cancelText": "取消",
+                  "footer": null,
+                  "destroyOnClose": true,
+                  "getContainer": "()=>document.querySelector('#lce-container')"
+                },
+                "children": []
+              }
+            },
+            {
+              "title": "气泡确认框",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*sAGpRoBtTXcAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "APopconfirm",
+                "props": {
+                  "title": "确认删除？",
+                  "okType": "primary",
+                  "okText": "确定",
+                  "cancelText": "取消"
+                },
+                "children": {
+                  "componentName": "AButton",
+                  "props": {
+                    "children": "删除"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "APopover",
+          "title": "气泡卡片",
+          "snippets": [
+            {
+              "title": "气泡卡片",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*XhL3QpRw92kAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "APopover",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AProgress",
+          "title": "进度",
+          "snippets": [
+            {
+              "title": "进度条",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*gK_4S6fDRfgAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AProgress",
+                "props": {
+                  "percent": 20,
+                  "status": "active"
+                }
+              }
+            },
+            {
+              "title": "进度圈",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/progress/progress-1.jpg",
+              "schema": {
+                "componentName": "AProgress",
+                "props": {
+                  "percent": 20,
+                  "type": "circle",
+                  "status": "circle"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AResult",
+          "title": "结果",
+          "snippets": [
+            {
+              "title": "结果",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*-e2IRroDJyEAAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "AResult",
+                "props": {
+                  "status": "success",
+                  "title": "成功提示!",
+                  "subTitle": "测试成功提示"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "APopover",
+          "title": "骨架屏",
+          "snippets": [
+            {
+              "title": "骨架屏",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*uae3QbkNCm8AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ASkeleton",
+                "props": {
+                  "active": true,
+                  "loading": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASpin",
+          "title": "加载中",
+          "snippets": [
+            {
+              "title": "加载中",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*5mC5TomY4B0AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ASpin",
+                "props": {
+                  "size": "large",
+                  "tip": "loading..."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATag",
+          "title": "标签",
+          "snippets": [
+            {
+              "title": "标签",
+              "screenshot": "https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*_SBsSrKLg00AAAAAAAAAAAAADrJ8AQ/original",
+              "schema": {
+                "componentName": "ATag",
+                "props": {
+                  "color": "magenta",
+                  "children": "标签",
+                  "visible": true
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "其他",
+      "children": [
+        {
+          "componentName": "ABackTop",
+          "title": "回到顶部",
+          "snippets": [
+            {
+              "title": "回到顶部",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/tJZ5jbTwX/BackTop.svg",
+              "schema": {
+                "componentName": "ABackTop",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ConfigProvider",
+          "title": "全局化配置",
+          "snippets": [
+            {
+              "title": "全局化配置",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/kegYxl1wj/ConfigProvider.svg",
+              "schema": {
+                "componentName": "ConfigProvider",
+                "props": {}
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "表单",
+      "children": [
+        {
+          "componentName": "AAutoComplete",
+          "title": "自动完成输入框",
+          "snippets": [
+            {
+              "title": "自动完成输入框",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/qtJm4yt45/AutoComplete.svg",
+              "schema": {
+                "componentName": "AAutoComplete",
+                "props": {
+                  "placeholder": "请输入",
+                  "options": [
+                    {
+                      "label": "aaa",
+                      "value": "aaa"
+                    },
+                    {
+                      "label": "bbb",
+                      "value": "bbb"
+                    }
+                  ],
+                  "filterOption": true,
+                  "style": {
+                    "width": "200px"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ACheckbox",
+          "title": "多选框",
+          "snippets": [
+            {
+              "title": "多选框",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/checkbox/checkbox-1.jpg",
+              "schema": {
+                "componentName": "ACheckbox",
+                "props": {
+                  "children": "checkbox",
+                  "checked": true
+                }
+              }
+            },
+            {
+              "title": "多选框组",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/8nbVbHEm_/CheckBox.svg",
+              "schema": {
+                "componentName": "ACheckboxGroup",
+                "props": {
+                  "indeterminate": false,
+                  "options": [
+                    {
+                      "label": "选项一",
+                      "value": "1"
+                    },
+                    {
+                      "label": "选项二",
+                      "value": "2"
+                    },
+                    {
+                      "label": "选修三",
+                      "value": "3"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ADatePicker",
+          "title": "选择日期",
+          "snippets": [
+            {
+              "title": "选择日期",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/date-picker/date-picker-1.png",
+              "schema": {
+                "componentName": "ADatePicker",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  }
+                }
+              }
+            },
+            {
+              "title": "选择周",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/date-picker/date-picker-2.png",
+              "schema": {
+                "componentName": "ADatePicker",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "picker": "week"
+                }
+              }
+            },
+            {
+              "title": "选择月份",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/date-picker/date-picker-3.png",
+              "schema": {
+                "componentName": "ADatePicker",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "picker": "month"
+                }
+              }
+            },
+            {
+              "title": "选择季度",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/date-picker/date-picker-4.png",
+              "schema": {
+                "componentName": "ADatePicker",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "picker": "quarter"
+                }
+              }
+            },
+            {
+              "title": "选择年份",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/date-picker/date-picker-5.png",
+              "schema": {
+                "componentName": "ADatePicker",
+                "props": {
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "picker": "year"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AForm",
+          "title": "表单",
+          "snippets": [
+            {
+              "title": "空表单",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/ORmcdeaoO/Form.svg",
+              "schema": {
+                "componentName": "AForm",
+                "props": {
+                  "labelCol": {
+                    "span": 6,
+                    "labelAlign": "right"
+                  },
+                  "wrapperCol": {
+                    "span": 14
+                  },
+                  "onValidate": {
+                    "type": "JSFunction",
+                    "value": "function onValidate(e) {\n  console.log(\"e\", changedValues, allValues);\n}"
+                  },
+                  "onFinish": {
+                    "type": "JSFunction",
+                    "value": "function onFinish(values) {\n  console.log(\"onFinish\", values);\n}"
+                  },
+                  "onFinishFailed": {
+                    "type": "JSFunction",
+                    "value": "function onFinishFailed({ values, errorFields, outOfDate }) {\n  console.log(\"onFinishFailed\", values, errorFields, outOfDate);\n}"
+                  },
+                  "onSubmit": {
+                    "type": "JSFunction",
+                    "value": "function onSubmit(e){\n console.log(\"onSubmit\",e);\n}"
+                  },
+                  "name": "basic"
+                },
                 "children": []
               }
             }
           ]
         },
         {
-          "componentName": "NSpace",
-          "library": "naive-ui",
+          "componentName": "AFormItem",
+          "title": "表单项",
           "snippets": [
             {
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/space.svg",
+              "title": "表单项",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/form/form-1.jpg",
+              "schema": {
+                "componentName": "AFormItem",
+                "props": {
+                  "label": "表单项",
+                  "validateStatus": ""
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AInput",
+          "title": "输入框",
+          "snippets": [
+            {
+              "title": "输入框",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/xS9YEJhfe/Input.svg",
+              "schema": {
+                "componentName": "AInput",
+                "props": {
+                  "style": {
+                    "width": "160px",
+                    "display": "inline-flex",
+                    "alignItems": "center",
+                    "marginRight": "10px"
+                  },
+                  "type": "text",
+                  "size": "default",
+                  "placeholder": "请输入",
+                  "autocomplete": "off",
+                  "label": "",
+                  "bordered": true,
+                  "name": "",
+                  "prefix": {
+                    "type": "JSSlot",
+                    "value": [
+                      {
+                        "componentName": "ATypographyText",
+                        "props": {
+                          "children": "用户姓名：",
+                          "code": false,
+                          "delete": false,
+                          "disabled": false,
+                          "mark": false,
+                          "keyboard": false,
+                          "underline": false,
+                          "strong": false,
+                          "style": {
+                            "color": "#707070",
+                            "fontSize": "12px"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AInputPassword",
+          "title": "密码框",
+          "snippets": [
+            {
+              "title": "密码框",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/input/input-1.jpg",
+              "schema": {
+                "componentName": "AInputPassword",
+                "props": {}
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AInputSearch",
+          "title": "搜索框",
+          "snippets": [
+            {
+              "title": "搜索框",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/input/input-2.jpg",
+              "schema": {
+                "componentName": "AInputSearch",
+                "props": {
+                  "placeholder": "搜索..."
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AInputTextArea",
+          "title": "长文本(文本框)",
+          "snippets": [
+            {
+              "title": "长文本(文本框)",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/input/input-3.jpg",
+              "schema": {
+                "componentName": "AInputTextArea",
+                "props": {
+                  "style": {
+                    "width": "160px",
+                    "fontSize": "12px",
+                    "borderRadius": "2px"
+                  },
+                  "autoSize": {
+                    "minRows": 3,
+                    "maxRows": 3
+                  },
+                  "placeholder": "请输入"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ARadio",
+          "title": "单选框",
+          "snippets": [
+            {
+              "title": "单选框",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/radio/radio-1.jpg",
+              "schema": {
+                "componentName": "ARadio",
+                "props": {
+                  "children": "Radio"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ARadioGroup",
+          "title": "单选框组",
+          "snippets": [
+            {
+              "title": "单选框组",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/8cYb5seNB/Radio.svg",
+              "schema": {
+                "componentName": "ARadioGroup",
+                "props": {
+                  "v-model:value": "A",
+                  "name": "radio-group",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "C",
+                      "value": "C"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ARangePicker",
+          "title": "日期区间",
+          "snippets": [
+            {
+              "title": "日期区间",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/range-picker/range-picker-1.png",
+              "schema": {
+                "componentName": "ARangePicker",
+                "props": {
+                  "style": {
+                    "width": "360px",
+                    "marginLeft": "10px"
+                  },
+                  "format": "YYYY-MM-DD HH:mm:ss",
+                  "allowCreate": false,
+                  "bordered": true,
+                  "showToday": true,
+                  "autoFocus": true,
+                  "inputReadOnly": false,
+                  "separator": "至",
+                  "dropdownClassName": "date-range-picker"
+                }
+              }
+            },
+            {
+              "title": "周区间",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/range-picker/range-picker-1.png",
+              "schema": {
+                "componentName": "ARangePicker",
+                "props": {
+                  "style": {
+                    "width": "360px",
+                    "marginLeft": "10px"
+                  },
+                  "picker": "week"
+                }
+              }
+            },
+            {
+              "title": "月区间",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/range-picker/range-picker-1.png",
+              "schema": {
+                "componentName": "ARangePicker",
+                "props": {
+                  "style": {
+                    "width": "360px",
+                    "marginLeft": "10px"
+                  },
+                  "picker": "month"
+                }
+              }
+            },
+            {
+              "title": "年区间",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/range-picker/range-picker-1.png",
+              "schema": {
+                "componentName": "ARangePicker",
+                "props": {
+                  "style": {
+                    "width": "360px",
+                    "marginLeft": "10px"
+                  },
+                  "picker": "year"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASlider",
+          "title": "滑块(滑动输入条)",
+          "snippets": [
+            {
+              "title": "滑块(滑动输入条)",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg",
+              "schema": {
+                "componentName": "ASlider",
+                "props": {
+                  "defaultValue": 30
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "AUpload",
+          "title": "上传",
+          "snippets": [
+            {
+              "title": "上传",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/QaeBt_ZMg/Upload.svg",
+              "schema": {
+                "componentName": "AUpload",
+                "props": {},
+                "children": {
+                  "componentName": "AButton",
+                  "props": {
+                    "children": "AUpload"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "布局",
+      "children": [
+        {
+          "componentName": "ADivider",
+          "title": "分割线",
+          "snippets": [
+            {
+              "title": "分割线",
+              "screenshot": "https://gw.alipayobjects.com/zos/alicdn/5swjECahe/Divider.svg",
+              "schema": {
+                "componentName": "ADivider",
+                "props": {
+                  "plain": false,
+                  "direction": "horizontal"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ARow",
+          "title": "栅格",
+          "snippets": [
+            {
+              "title": "栅格-两栏",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/row/row-1.png",
+              "schema": {
+                "componentName": "ARow",
+                "props": {},
+                "children": [
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 12
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 12
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "title": "栅格-三栏",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/row/row-2.png",
+              "schema": {
+                "componentName": "ARow",
+                "props": {},
+                "children": [
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 8
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 8
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 8
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "title": "栅格-四栏",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/row/row-3.png",
+              "schema": {
+                "componentName": "ARow",
+                "props": {},
+                "children": [
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 6
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 6
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 6
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 6
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "title": "栅格-1:3",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/row/row-4.png",
+              "schema": {
+                "componentName": "ARow",
+                "props": {},
+                "children": [
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 6
+                    }
+                  },
+                  {
+                    "componentName": "ACol",
+                    "props": {
+                      "span": 18
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ASpace",
+          "title": "间距",
+          "snippets": [
+            {
               "title": "间距",
+              "screenshot": "https://gw.alipayobjects.com/zos/antfincdn/wc6%263gJ0Y8/Space.svg",
               "schema": {
-                "componentName": "NSpace",
-                "children": []
-              }
-            }
-          ]
-        },
-        {
-          "componentName": "NGrid",
-          "library": "naive-ui",
-          "snippets": [
-            {
-              "screenshot": "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1.png",
-              "title": "两栏栅格",
-              "schema": {
-                "componentName": "NGrid",
-                "props": {
-                  "cols": 24
-                },
+                "componentName": "ASpace",
+                "props": {},
                 "children": [
                   {
-                    "componentName": "NGridItem",
+                    "componentName": "AButton",
                     "props": {
-                      "span": 12
+                      "children": "Button-1"
                     }
                   },
                   {
-                    "componentName": "NGridItem",
+                    "componentName": "AButton",
                     "props": {
-                      "span": 12
+                      "children": "Button-2"
                     }
                   }
                 ]
@@ -1651,72 +2406,127 @@
       ]
     },
     {
-      "title": "信息输入",
+      "title": "基础",
       "children": [
         {
-          "componentName": "NForm",
-          "library": "naive-ui",
+          "componentName": "ATypographyLink",
+          "title": "链接",
           "snippets": [
             {
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/form.png",
-              "title": "表单容器",
+              "title": "链接",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-link-1.png",
               "schema": {
-                "componentName": "NForm",
+                "componentName": "ATypographyLink",
                 "props": {
-                  "label-width": 80
-                },
-                "children": [
-                  {
-                    "componentName": "NFormItem",
-                    "props": {
-                      "label": "用户名"
-                    },
-                    "children": [
-                      {
-                        "componentName": "NInput",
-                        "props": {
-                          "placeholder": "请输入用户名"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "componentName": "NFormItem",
-                    "props": {
-                      "label": "密码"
-                    },
-                    "children": [
-                      {
-                        "componentName": "NInput",
-                        "props": {
-                          "type": "password",
-                          "placeholder": "请输入密码"
-                        }
-                      }
-                    ]
-                  }
-                ]
+                  "href": "https://www.antdv.com/components/typography-cn#API",
+                  "target": "_blank",
+                  "children": "链接"
+                }
               }
             }
           ]
         },
         {
-          "componentName": "NFormItem",
-          "library": "naive-ui",
+          "componentName": "ATypographyParagraph",
+          "title": "段落",
           "snippets": [
             {
-              "screenshot": "https://helios-allpublic-1257616148.cos.ap-shanghai.myqcloud.com/img/input.png",
-              "title": "文本输入",
+              "title": "段落",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-paragraph-1.png",
               "schema": {
-                "componentName": "NFormItem",
+                "componentName": "ATypographyParagraph",
                 "props": {
-                  "label": "标签"
-                },
-                "children": [
-                  {
-                    "componentName": "NInput"
-                  }
-                ]
+                  "ellipsis": true,
+                  "children": "Castle，【城堡】的英文单词，我们致力于在前端组构建一套前端工程化团队标准，目标是取各家之所长，整合一套开箱即用、可拓展、可升级的一系列配套设计，在统一标准的同时提高开发效率；让开发者就像住在城堡一样，样样俱全，稳定可靠。"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATypographyText",
+          "title": "文本",
+          "snippets": [
+            {
+              "title": "文本",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-text-1.png",
+              "schema": {
+                "componentName": "ATypographyText",
+                "props": {
+                  "children": "text"
+                }
+              }
+            },
+            {
+              "title": "可复制文本",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-text-2.png",
+              "schema": {
+                "componentName": "ATypographyText",
+                "props": {
+                  "copyable": true,
+                  "children": "text"
+                }
+              }
+            },
+            {
+              "title": "可编辑文本",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-text-3.png",
+              "schema": {
+                "componentName": "ATypographyText",
+                "props": {
+                  "editable": true,
+                  "children": "text"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "componentName": "ATitle",
+          "title": "标题",
+          "snippets": [
+            {
+              "title": "一级标题",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-title-1.png",
+              "schema": {
+                "componentName": "ATypographyTitle",
+                "props": {
+                  "level": 1,
+                  "children": "一级标题"
+                }
+              }
+            },
+            {
+              "title": "二级标题",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-title-2.png",
+              "schema": {
+                "componentName": "ATypographyTitle",
+                "props": {
+                  "level": 2,
+                  "children": "二级标题"
+                }
+              }
+            },
+            {
+              "title": "三级标题",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-title-3.png",
+              "schema": {
+                "componentName": "ATypographyTitle",
+                "props": {
+                  "level": 3,
+                  "children": "三级标题"
+                }
+              }
+            },
+            {
+              "title": "四级标题",
+              "screenshot": "http://10.13.4.153:9000/lowcode-resource/img/typography/typography-title-4.png",
+              "schema": {
+                "componentName": "ATypographyTitle",
+                "props": {
+                  "level": 4,
+                  "children": "四级标题"
+                }
               }
             }
           ]
