@@ -28,10 +28,15 @@ module.exports = ({ onGetWebpackConfig }) => {
     config.merge({
       output: {
         path: path.resolve(__dirname, 'lib'),
-        library: 'LowCodeSchemaComp',
-        libraryTarget: 'umd',
-      }
+        publicPath: '/lib/',
+        filename: 'index.js',  // 输出文件名
+        library: 'lowcode-vue-schema-component',
+        libraryTarget: 'umd'
+      },
     });
+    // config.merge({
+    //   devtool: 'source-map',
+    // })
 
     config.plugin('html').use(HtmlWebpackPlugin, [
       {

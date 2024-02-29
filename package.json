@@ -1,9 +1,15 @@
 {
-  "name": "lowcode-vue-schema-component", 
-  "private": false, 
-  "version": "0.0.1",
+  "name": "lowcode-vue-schema-component",
+  "private": false,
+  "version": "0.0.8",
   "description": "lowcode-vue的schema组件",
-  "main": "/js/index.js",
+  "main": "lib/index.js",
+  "author": "ChenYang",
+  "license": "ISC",
+  "keywords": [
+    "lowcode-vue-engine",
+    "lowcode-vue-preview"
+  ],
   "scripts": {
     "dev": "node ./scripts/start.mjs",
     "start": "build-scripts start --disable-reload --port 5557",
@@ -19,6 +25,7 @@
     "vue-loader": "^17.4.2"
   },
   "devDependencies": {
+    "lowcode-vue-schema-component": "0.0.6",
     "@alib/build-scripts": "^0.1.32",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",

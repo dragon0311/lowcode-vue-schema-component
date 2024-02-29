@@ -1,162 +1,857 @@
 {
-  "componentName": "Page",
-  "id": "node_dockcviv8fo1",
-  "props": {},
-  "fileName": "/",
-  "state": {
-    "text": {
-      "type": "JSExpression",
-      "value": "\"outer\""
+  "version": "1.0.0",
+  "componentsMap": [
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AAutoComplete"
     },
-    "isShowDialog": {
-      "type": "JSExpression",
-      "value": "false"
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AResult"
     },
-    "info": {
-      "type": "JSExpression",
-      "value": "{\n  \"info\": \"\",\n  \"user\": {\n    \"username\": \"\",\n    \"password\": \"\"\n  }\n}"
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AModal"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ABackTop"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AButton"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ATimePicker"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ACheckboxGroup"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ACheckbox"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ATransfer"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AIcon"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AAlert"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ASelect"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ATypographyText"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AInput"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "AInputTextArea"
+    },
+    {
+      "devMode": "lowCode",
+      "componentName": "Descriptions.Item"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ADescriptions"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "APopover"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ARangePicker"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ATypographyParagraph"
+    },
+    {
+      "package": "lowcode-material-ant-vue",
+      "version": "0.1.0",
+      "destructuring": true,
+      "componentName": "ADatePicker"
+    },
+    {
+      "devMode": "lowCode",
+      "componentName": "Page"
     }
-  },
-  "dataSource": {
-    "list": [
-      {
-        "type": "fetch",
-        "isInit": true,
-        "options": {
-          "params": {},
-          "method": "GET",
-          "isCors": true,
-          "timeout": 5000,
-          "headers": {},
-          "uri": "mock/info.json"
+  ],
+  "componentsTree": [
+    {
+      "componentName": "Page",
+      "id": "node_dockcviv8fo1",
+      "props": {},
+      "docId": "doclryna7f3",
+      "fileName": "/",
+      "state": {
+        "text": "outer",
+        "isShowDialog": false,
+        "modal": {
+          "visible": ""
         },
-        "id": "info"
+        "username": ""
       },
-      {
-        "type": "fetch",
-        "isInit": false,
-        "options": {
-          "params": {
-            "username": {
-              "type": "JSExpression",
-              "value": "this.info.user.username"
+      "dataSource": {
+        "list": []
+      },
+      "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
+      "lifeCycles": {
+        "mounted": {
+          "type": "JSFunction",
+          "value": "function () {\n    console.log('did mount');\n  }"
+        },
+        "beforeMount": {
+          "type": "JSFunction",
+          "value": "function () {\n    console.log('will unmount');\n  }"
+        }
+      },
+      "methods": {
+        "testFunc": {
+          "type": "JSFunction",
+          "value": "function () {\n      console.log('test func');\n    }"
+        },
+        "onClickButton": {
+          "type": "JSFunction",
+          "value": "function (event){\n    // 点击按钮时的回调\n      console.log('onClick', event);\n      console.log('this.modal', this.modal);\n\n      this.modal.visible = true\n    }"
+        },
+        "onChangeUser": {
+          "type": "JSFunction",
+          "value": "function (event){\n    // 输入框内容变化时的回调\n    console.log('onChange',event);\n\n    }"
+        },
+        "onClickReset": {
+          "type": "JSFunction",
+          "value": "function (event){\n    // 点击按钮时的回调\n    console.log('onClick', event);\n      this.dataSourceMap['hello'].load({}).then(res => { \n        console.log('88888', res)\n      })\n        .catch(error => { });\n    }"
+        },
+        "onChangeSelect": {
+          "type": "JSFunction",
+          "value": "function (value,option){\n     console.log('onDeselect',value,option)\n     }"
+        }
+      },
+      "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": "",
+      "meta": {
+        "originCode": "import { defineComponent } from 'vue';\n\nexport default defineComponent({\n  data: () => ({\n    text: \"outer\",\n    isShowDialog: false,\n    modal: {\n      visible: \"\",\n    },\n    username: '',\n  }),\n  methods: {\n    testFunc() {\n      console.log('test func');\n    },\n    onClickButton(event){\n    // 点击按钮时的回调\n      console.log('onClick', event);\n      console.log('this.modal', this.modal);\n\n      this.modal.visible = true\n    },\n    onChangeUser(event){\n    // 输入框内容变化时的回调\n    console.log('onChange',event);\n\n    },\n    onClickReset(event){\n    // 点击按钮时的回调\n    console.log('onClick', event);\n      this.dataSourceMap['hello'].load({}).then(res => { \n        console.log('88888', res)\n      })\n        .catch(error => { });\n    },\n    onChangeSelect(value,option){\n     console.log('onDeselect',value,option)\n     },\n  },\n  mounted() {\n    console.log('did mount');\n  },\n  beforeMount() {\n    console.log('will unmount');\n  },\n})\n"
+      },
+      "children": [
+        {
+          "componentName": "AAutoComplete",
+          "id": "node_ocls039bl61",
+          "props": {
+            "placeholder": "请输入",
+            "options": [
+              {
+                "label": "aaa",
+                "value": "aaa"
+              },
+              {
+                "label": "bbb",
+                "value": "bbb"
+              }
+            ],
+            "filterOption": true,
+            "style": {
+              "width": "200px"
             },
-            "password": {
+            "allowClear": true,
+            "defaultActiveFirstOption": true
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AModal",
+          "id": "node_oclryb6uxw6",
+          "props": {
+            "style": {
+              "width": "650px"
+            },
+            "title": "Basic Modal",
+            "okText": "确认",
+            "cancelText": "取消",
+            "destroyOnClose": true,
+            "getContainer": "",
+            "v-model:visible": {
               "type": "JSExpression",
-              "value": "this.info.user.password"
+              "value": "this.modal.visible",
+              "mock": true
+            },
+            "centered": false,
+            "closable": true,
+            "confirmLoading": false,
+            "forceRender": false,
+            "keyboard": true,
+            "mask": true,
+            "maskClosable": true,
+            "bodyStyle": {},
+            "maskStyle": {},
+            "dialogStyle": {},
+            "zIndex": 12,
+            "width": "222",
+            "okButtonProps": {
+              "disabled": false
+            },
+            "cancelButtonProps": {
+              "disabled": false
+            },
+            "__events": {
+              "eventDataList": [
+                {
+                  "type": "componentEvent",
+                  "name": "onCancel",
+                  "relatedEventName": "onCancelModal"
+                }
+              ],
+              "eventList": [
+                {
+                  "name": "onCancel",
+                  "disabled": true
+                },
+                {
+                  "name": "onOk",
+                  "disabled": false
+                }
+              ]
+            },
+            "onCancel": {
+              "type": "JSFunction",
+              "value": "function(){return this.onCancelModal.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
             }
           },
-          "method": "POST",
-          "isCors": true,
-          "timeout": 5000,
-          "headers": {
-            "Auth": {
-              "type": "JSExpression",
-              "value": "this.text"
-            },
-            "Content-Type": "application/json"
-          },
-          "uri": "/api/user/login"
-        },
-        "id": "submit"
-      }
-    ]
-  },
-  "css": "body {\n  font-size: 12px;\n}\n\n.button {\n  width: 100px;\n  color: #ff00ff\n}",
-  "lifeCycles": {
-    "mounted": {
-      "type": "JSFunction",
-      "value": "function mounted() {\n  console.log('did mount');\n}"
-    },
-    "beforeMount": {
-      "type": "JSFunction",
-      "value": "function beforeMount() {\n  console.log('will unmount');\n}"
-    }
-  },
-  "methods": {
-    "testFunc": {
-      "type": "JSFunction",
-      "value": "function testFunc() {\n  console.log('test func');\n}"
-    }
-  },
-  "originCode": "class LowcodeComponent extends Component {\n  state = {\n    \"text\": \"outer\",\n    \"isShowDialog\": false,\n    \"info\": {\n      \"info\": \"\",\n      \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n      }\n    }\n  }\n  componentDidMount() {\n    console.log('did mount');\n  }\n  componentWillUnmount() {\n    console.log('will unmount');\n  }\n  testFunc() {\n    console.log('test func');\n  }\n  onClick() {\n    this.setState({\n      isShowDialog: true\n    })\n  }\n  closeDialog() {\n    this.setState({\n      isShowDialog: false\n    })\n  }\n\n\tonClick_new(){\n    this.$message.success('hhhhhh')\n\t}\n\n\tonSubmit(ev){\n    ev.preventDefault();\n    this.dataSourceMap.submit.load()\n\t}\n}",
-  "hidden": false,
-  "title": "",
-  "isLocked": false,
-  "condition": true,
-  "conditionGroup": "",
-  "children": [
-    {
-      "componentName": "NCard",
-      "id": "node_ocl4goj8tm1",
-      "props": {
-        "segmented": {
-          "content": false,
-          "footer": false,
-          "action": false
-        },
-        "header": {
-          "type": "JSSlot",
-          "value": [
+          "docId": "doclryna7f3",
+          "hidden": true,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": "",
+          "children": [
             {
-              "componentName": "NText",
-              "id": "node_ocl4goj8tm3",
+              "componentName": "AResult",
+              "id": "node_oclryor1h44",
               "props": {
-                "children": "用户登录",
-                "type": "default",
-                "tag": "span"
+                "status": "success",
+                "title": "成功提示!",
+                "subTitle": "测试成功提示"
               },
+              "docId": "doclrzz5nqe",
               "hidden": false,
               "title": "",
               "isLocked": false,
               "condition": true,
               "conditionGroup": ""
             }
-          ],
-          "title": "头部"
-        }
-      },
-      "hidden": false,
-      "title": "",
-      "isLocked": false,
-      "condition": true,
-      "conditionGroup": "",
-      "children": [
+          ]
+        },
         {
-          "componentName": "NForm",
-          "id": "node_ocl4gmvfwx1",
+          "componentName": "ABackTop",
+          "id": "node_oclrymm6p71",
           "props": {
-            "label-width": 80,
-            "label-align": "left",
-            "label-placement": "left",
-            "require-mark-placement": "right",
+            "visibilityHeight": 0,
+            "duration": 0
+          },
+          "docId": "doclryna7f3",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AButton",
+          "id": "node_oclryokln61",
+          "props": {
+            "style": {
+              "marginLeft": "10px",
+              "fontSize": "12px",
+              "width": "66px",
+              "height": "24px",
+              "display": "inline-flex",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            "type": "primary",
+            "children": "主按钮",
+            "htmlType": "button",
+            "size": "middle",
+            "shape": "default",
+            "block": false,
+            "danger": false,
+            "ghost": false,
+            "disabled": false,
             "__events": {
               "eventDataList": [
                 {
                   "type": "componentEvent",
-                  "name": "onSubmit",
-                  "relatedEventName": "onSubmit"
+                  "name": "onClick",
+                  "relatedEventName": "onClickButton"
                 }
               ],
               "eventList": [
                 {
-                  "name": "onSubmit",
+                  "name": "onClick",
+                  "template": "onClick(event,${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
                   "disabled": true
                 }
               ]
             },
-            "onSubmit": {
+            "onClick": {
               "type": "JSFunction",
-              "value": "function(){this.onSubmit.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
-            },
-            "model": {
-              "type": "JSExpression",
-              "value": "this.info.user",
-              "mock": {
-                "type": "JSExpression",
-                "value": "this.info.user"
-              }
+              "value": "function(){return this.onClickButton.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
             }
+          },
+          "docId": "doclrzz5nqe",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ABackTop",
+          "id": "node_oclryp1gpe1",
+          "props": {
+            "visibilityHeight": 0,
+            "duration": 0
+          },
+          "docId": "doclrzz5nqe",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ATimePicker",
+          "id": "node_oclrzz5nqe1",
+          "props": {
+            "showNow": true,
+            "allowClear": true,
+            "autoFocus": false,
+            "bordered": true,
+            "disabled": false,
+            "hideDisabledOptions": false,
+            "inputReadOnly": false,
+            "use12Hours": false
+          },
+          "docId": "doclrzz5nqe",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ACheckboxGroup",
+          "id": "node_ocls039bl63",
+          "props": {
+            "indeterminate": false,
+            "options": [
+              {
+                "label": "选项一",
+                "value": "1"
+              },
+              {
+                "label": "选项二",
+                "value": "2"
+              },
+              {
+                "label": "选修三",
+                "value": "3"
+              }
+            ],
+            "disabled": false
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ACheckbox",
+          "id": "node_ocls03l4yg1",
+          "props": {
+            "children": "checkbox",
+            "checked": true,
+            "autoFocus": false,
+            "defaultChecked": false,
+            "disabled": false,
+            "indeterminate": false
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ATransfer",
+          "id": "node_oclrytqx0v2",
+          "props": {
+            "dataSource": [
+              {
+                "key": 11111111,
+                "title": "测试数据1"
+              },
+              {
+                "key": 22222222,
+                "title": "测试数据2"
+              },
+              {
+                "key": 33333333,
+                "title": "测试数据3"
+              }
+            ],
+            "render": {
+              "type": "JSFunction",
+              "value": "function renderItem(record, extParams) {\nreturn record.title;\n}"
+            },
+            "oneWay": false,
+            "disabled": false,
+            "showSearch": false,
+            "showSelectAll": true,
+            "pagination": false
+          },
+          "docId": "doclrzz5nqe",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AAlert",
+          "id": "node_ocls40dt5o2",
+          "props": {
+            "style": {
+              "backgroundColor": "#fef8e9",
+              "color": "#707070",
+              "height": "24px",
+              "padding": "0 4px",
+              "boxSizing": "border-box",
+              "border": "1px solid transparent"
+            },
+            "message": "",
+            "description": "This is a warning notice about copywriting.",
+            "type": "warning",
+            "showIcon": true,
+            "banner": false,
+            "closable": true,
+            "icon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls40dt5o5",
+                  "props": {
+                    "type": "InfoCircleFilled",
+                    "size": 12,
+                    "color": "#f7ba2b",
+                    "rotate": 0,
+                    "spin": false
+                  },
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls40dt5o3"
+            }
+          },
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ASelect",
+          "id": "node_ocls041pzaa",
+          "props": {
+            "style": {
+              "width": "220px",
+              "height": "22px",
+              "display": "inline-flex",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            "options": [
+              {
+                "label": "选项一",
+                "value": "1"
+              },
+              {
+                "label": "选项二",
+                "value": "2"
+              },
+              {
+                "label": "选项三",
+                "value": "3"
+              }
+            ],
+            "bordered": true,
+            "allowCreate": false,
+            "autoFocus": false,
+            "labelInValue": false,
+            "placeholder": "请选择",
+            "filterOption": false,
+            "autoClearSearchValue": true,
+            "showArrow": true,
+            "showSearch": true,
+            "size": "default",
+            "tokenSeparators": [],
+            "getPopupContainer": {
+              "type": "JSSlot",
+              "id": "node_ocls041rtu1"
+            },
+            "allowClear": true,
+            "optionFilterProp": "value",
+            "clearIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls041pzac",
+                  "props": {
+                    "type": "CloseCircleFilled",
+                    "size": 12,
+                    "color": "#ddd",
+                    "rotate": 0,
+                    "spin": false
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls041pzab"
+            },
+            "suffixIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls041pzae",
+                  "props": {
+                    "type": "CaretDownFilled",
+                    "size": 12,
+                    "color": "#5597f9",
+                    "rotate": 0,
+                    "spin": false,
+                    "class": ""
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls041pzad"
+            },
+            "maxTagCount": 0,
+            "maxTagTextLength": 0
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AInput",
+          "id": "node_ocls034ghj1",
+          "props": {
+            "style": {
+              "width": "160px",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "marginRight": "10px"
+            },
+            "type": "text",
+            "size": "default",
+            "placeholder": "请输入",
+            "autocomplete": "off",
+            "label": "",
+            "bordered": true,
+            "name": "",
+            "prefix": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "ATypographyText",
+                  "id": "node_ocls034ghj4",
+                  "props": {
+                    "children": "用户姓名：",
+                    "code": false,
+                    "delete": false,
+                    "disabled": false,
+                    "mark": false,
+                    "keyboard": false,
+                    "underline": false,
+                    "strong": false,
+                    "style": {
+                      "color": "#707070",
+                      "fontSize": "12px"
+                    }
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls034ghj2"
+            },
+            "allowClear": true,
+            "disabled": false,
+            "id": ""
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AInputTextArea",
+          "id": "node_oclrzovdmt1",
+          "props": {
+            "style": {
+              "fontSize": "12px",
+              "borderRadius": "2px"
+            },
+            "autoSize": {
+              "minRows": 3,
+              "maxRows": 3
+            },
+            "placeholder": "请输入",
+            "bordered": true,
+            "disabled": false,
+            "showCount": true,
+            "maxLength": 100
+          },
+          "docId": "doclrzz5nqe",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ASelect",
+          "id": "node_ocls04l9w54",
+          "props": {
+            "style": {
+              "width": "220px",
+              "height": "22px",
+              "display": "inline-flex",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            "options": [
+              {
+                "label": "选项一",
+                "value": "1"
+              },
+              {
+                "label": "选项二",
+                "value": "2"
+              },
+              {
+                "label": "选项三",
+                "value": "3"
+              }
+            ],
+            "bordered": true,
+            "allowCreate": false,
+            "autoFocus": false,
+            "labelInValue": false,
+            "placeholder": "请选择",
+            "filterOption": false,
+            "autoClearSearchValue": true,
+            "showArrow": true,
+            "showSearch": true,
+            "size": "default",
+            "tokenSeparators": [],
+            "getPopupContainer": {
+              "type": "JSSlot",
+              "id": "node_ocls04l9w59"
+            },
+            "allowClear": true,
+            "optionFilterProp": "value",
+            "clearIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls04l9w56",
+                  "props": {
+                    "type": "CloseCircleFilled",
+                    "size": 12,
+                    "color": "#ddd",
+                    "rotate": 0,
+                    "spin": false
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls04l9w55"
+            },
+            "suffixIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls04l9w58",
+                  "props": {
+                    "type": "CaretDownFilled",
+                    "size": 12,
+                    "color": "#5597f9",
+                    "rotate": 0,
+                    "spin": false,
+                    "class": ""
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls04l9w57"
+            },
+            "maxTagCount": 0,
+            "maxTagTextLength": 0,
+            "__events": {
+              "eventDataList": [
+                {
+                  "type": "componentEvent",
+                  "name": "onDeselect",
+                  "relatedEventName": "onChangeSelect"
+                }
+              ],
+              "eventList": [
+                {
+                  "name": "onBlur",
+                  "template": "onBlur(${extParams}){\n//失焦回调\n console.log('onBlur')}",
+                  "disabled": false
+                },
+                {
+                  "name": "onChange",
+                  "template": "onChange(value,option){\n console.log('onChange',value,option)}",
+                  "disabled": false
+                },
+                {
+                  "name": "onDeselect",
+                  "template": "onDeselect(value,option){\n console.log('onDeselect',value,option)}",
+                  "disabled": true
+                },
+                {
+                  "name": "onFocus",
+                  "template": "onFocus(${extParams}){\n//聚焦回调\n console.log('onFocus')}",
+                  "disabled": false
+                }
+              ]
+            },
+            "onDeselect": {
+              "type": "JSFunction",
+              "value": "function(){return this.onChangeSelect.apply(this,Array.prototype.slice.call(arguments).concat([])) }"
+            }
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "APopover",
+          "id": "node_ocls40dt5o6",
+          "props": {
+            "defaultVisible": false,
+            "autoAdjustOverflow": true,
+            "arrowPointAtCenter": false
           },
           "hidden": false,
           "title": "",
@@ -165,118 +860,70 @@
           "conditionGroup": "",
           "children": [
             {
-              "componentName": "NFormItem",
-              "id": "node_ocl4i3antp2",
+              "componentName": "ADescriptions",
+              "id": "node_oclrubc9ce1",
               "props": {
-                "label": "用户名",
-                "path": "username",
-                "size": "medium",
-                "show-label": true,
-                "label-align": "left",
-                "label-placement": "left",
-                "require-mark-placement": "right",
-                "rule": {
-                  "type": "string",
-                  "required": true,
-                  "trigger": ["input", "blur"],
-                  "message": "请输入用户名"
-                },
-                "label-width": "auto"
+                "title": "用户信息",
+                "items": [
+                  {
+                    "key": "cpag",
+                    "label": "陈阳",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_ocls40dt5o7"
+                    }
+                  },
+                  {
+                    "key": "34a3",
+                    "label": "标签项",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_ocls40dt5o8"
+                    }
+                  },
+                  {
+                    "key": "bnxi",
+                    "label": "标签项",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_ocls40dt5o9"
+                    }
+                  }
+                ],
+                "bordered": false,
+                "column": 1,
+                "size": "default",
+                "layout": "horizontal",
+                "colon": true,
+                "_unsafe_MixedSetter_items_select": "ArraySetter"
               },
+              "docId": "doclryna7f3",
               "hidden": false,
               "title": "",
               "isLocked": false,
               "condition": true,
               "conditionGroup": "",
+              "loopArgs": [
+                "",
+                ""
+              ],
               "children": [
                 {
-                  "componentName": "NInput",
-                  "id": "node_ocl4i3antp3",
+                  "componentName": "Descriptions.Item",
+                  "id": "node_oclrubc9ceb",
                   "props": {
-                    "placeholder": "请输入用户名",
-                    "v-model:value": {
-                      "type": "JSExpression",
-                      "value": "this.info.user.username"
-                    },
-                    "show-password-on": "click"
+                    "key": "cpag",
+                    "label": "陈阳",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_oclrubc9cec"
+                    }
                   },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                }
-              ]
-            },
-            {
-              "componentName": "NFormItem",
-              "id": "node_ocl4i3antp4",
-              "props": {
-                "label": "密码",
-                "path": "password",
-                "size": "medium",
-                "show-label": true,
-                "label-align": "left",
-                "label-placement": "left",
-                "require-mark-placement": "right",
-                "rule": {
-                  "type": "string",
-                  "required": true,
-                  "trigger": ["input", "blur"],
-                  "message": "请输入密码"
-                }
-              },
-              "hidden": false,
-              "title": "",
-              "isLocked": false,
-              "condition": true,
-              "conditionGroup": "",
-              "children": [
-                {
-                  "componentName": "NInput",
-                  "id": "node_ocl4i3antp5",
-                  "props": {
-                    "placeholder": "请输入密码",
-                    "v-model:value": {
-                      "type": "JSExpression",
-                      "value": "this.info.user.password"
-                    },
-                    "type": "password",
-                    "show-password-on": "click"
-                  },
-                  "hidden": false,
-                  "title": "",
-                  "isLocked": false,
-                  "condition": true,
-                  "conditionGroup": ""
-                }
-              ]
-            },
-            {
-              "componentName": "NSpace",
-              "id": "node_ocl4goj8tm4",
-              "props": {
-                "align": "start",
-                "justify": "center",
-                "size": "medium"
-              },
-              "hidden": false,
-              "title": "",
-              "isLocked": false,
-              "condition": true,
-              "conditionGroup": "",
-              "children": [
-                {
-                  "componentName": "NButton",
-                  "id": "node_ocl4goj8tm6",
-                  "props": {
-                    "children": "登录",
-                    "icon-placement": "left",
-                    "attr-type": "submit",
-                    "type": "primary",
-                    "size": "medium",
-                    "bordered": true
-                  },
+                  "docId": "doclryna7f3",
                   "hidden": false,
                   "title": "",
                   "isLocked": false,
@@ -284,16 +931,37 @@
                   "conditionGroup": ""
                 },
                 {
-                  "componentName": "NButton",
-                  "id": "node_ocl4goj8tm5",
+                  "componentName": "Descriptions.Item",
+                  "id": "node_oclrubc9cef",
                   "props": {
-                    "children": "重置",
-                    "icon-placement": "left",
-                    "attr-type": "button",
-                    "type": "default",
-                    "size": "medium",
-                    "bordered": true
+                    "key": "34a3",
+                    "label": "标签项",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_oclrubc9ceg"
+                    }
                   },
+                  "docId": "doclryna7f3",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                },
+                {
+                  "componentName": "Descriptions.Item",
+                  "id": "node_oclrubc9cek",
+                  "props": {
+                    "key": "bnxi",
+                    "label": "标签项",
+                    "span": 1,
+                    "children": {
+                      "type": "JSSlot",
+                      "id": "node_oclrubc9cel"
+                    }
+                  },
+                  "docId": "doclryna7f3",
                   "hidden": false,
                   "title": "",
                   "isLocked": false,
@@ -303,8 +971,701 @@
               ]
             }
           ]
+        },
+        {
+          "componentName": "ASelect",
+          "id": "node_ocls07rzae1",
+          "props": {
+            "style": {
+              "width": "220px",
+              "height": "22px",
+              "display": "inline-flex",
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            "options": [
+              {
+                "label": "选项一",
+                "value": "1"
+              },
+              {
+                "label": "选项二",
+                "value": "2"
+              },
+              {
+                "label": "选项三",
+                "value": "3"
+              }
+            ],
+            "bordered": true,
+            "allowCreate": false,
+            "autoFocus": false,
+            "labelInValue": false,
+            "placeholder": "请选择",
+            "filterOption": false,
+            "autoClearSearchValue": true,
+            "showArrow": true,
+            "showSearch": true,
+            "size": "default",
+            "tokenSeparators": [],
+            "allowClear": true,
+            "optionFilterProp": "value",
+            "clearIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls07rzae3",
+                  "props": {
+                    "type": "CloseCircleFilled",
+                    "size": 12,
+                    "color": "#ddd",
+                    "rotate": 0,
+                    "spin": false
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls07rzae2"
+            },
+            "suffixIcon": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "AIcon",
+                  "id": "node_ocls07rzae5",
+                  "props": {
+                    "type": "CaretDownFilled",
+                    "size": 12,
+                    "color": "#5597f9",
+                    "rotate": 0,
+                    "spin": false
+                  },
+                  "docId": "docls1ijl2q",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls07rzae4"
+            },
+            "maxTagCount": 0,
+            "maxTagTextLength": 0
+          },
+          "docId": "docls1ijl2q",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ARangePicker",
+          "id": "node_ocls2zhilw2",
+          "props": {
+            "style": {
+              "width": "360px",
+              "marginLeft": "10px"
+            },
+            "picker": "week",
+            "allowClear": true,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": false,
+            "disabled": false,
+            "inputReadOnly": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ATypographyParagraph",
+          "id": "node_ocls2wds6g1",
+          "props": {
+            "ellipsis": true,
+            "children": "Castle，【城堡】的英文单词，我们致力于在前端组构建一套前端工程化团队标准，目标是取各家之所长，整合一套开箱即用、可拓展、可升级的一系列配套设计，在统一标准的同时提高开发效率；让开发者就像住在城堡一样，样样俱全，稳定可靠。",
+            "code": false,
+            "copyable": false,
+            "delete": false,
+            "disabled": false,
+            "editable": false,
+            "mark": false,
+            "underline": false,
+            "strong": false
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "AInput",
+          "id": "node_ocls2wdunh1",
+          "props": {
+            "style": {
+              "width": "160px",
+              "display": "inline-flex",
+              "alignItems": "center",
+              "marginRight": "10px"
+            },
+            "type": "text",
+            "size": "default",
+            "placeholder": "请输入",
+            "autocomplete": "off",
+            "label": "",
+            "bordered": true,
+            "name": "",
+            "prefix": {
+              "type": "JSSlot",
+              "value": [
+                {
+                  "componentName": "ATypographyText",
+                  "id": "node_ocls2wdunh4",
+                  "props": {
+                    "children": "用户姓名：",
+                    "code": false,
+                    "delete": false,
+                    "disabled": false,
+                    "mark": false,
+                    "keyboard": false,
+                    "underline": false,
+                    "strong": false,
+                    "style": {
+                      "color": "#707070",
+                      "fontSize": "12px"
+                    }
+                  },
+                  "docId": "docls4091sj",
+                  "hidden": false,
+                  "title": "",
+                  "isLocked": false,
+                  "condition": true,
+                  "conditionGroup": ""
+                }
+              ],
+              "id": "node_ocls2wdunh2"
+            },
+            "disabled": false,
+            "id": ""
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ADatePicker",
+          "id": "node_ocls2wdunh5",
+          "props": {
+            "style": {
+              "marginLeft": "10px"
+            },
+            "picker": "month",
+            "format": "YYYY-MM-DD",
+            "allowClear": true,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": false,
+            "disabled": false,
+            "inputReadOnly": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ARangePicker",
+          "id": "node_ocls2zcqdu1",
+          "props": {
+            "style": {
+              "width": "360px",
+              "marginLeft": "10px"
+            },
+            "format": "YYYY-MM-DD HH:mm:ss",
+            "allowCreate": false,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": true,
+            "inputReadOnly": false,
+            "separator": "至",
+            "dropdownClassName": "date-range-picker",
+            "allowClear": true,
+            "disabled": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ARangePicker",
+          "id": "node_ocls2zhilw4",
+          "props": {
+            "style": {
+              "width": "360px",
+              "marginLeft": "10px"
+            },
+            "picker": "year",
+            "allowClear": true,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": false,
+            "disabled": false,
+            "inputReadOnly": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ARangePicker",
+          "id": "node_ocls2zhilw3",
+          "props": {
+            "style": {
+              "width": "360px",
+              "marginLeft": "10px"
+            },
+            "picker": "month",
+            "allowClear": true,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": false,
+            "disabled": false,
+            "inputReadOnly": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
+        },
+        {
+          "componentName": "ADatePicker",
+          "id": "node_ocls2zhilw1",
+          "props": {
+            "style": {
+              "marginLeft": "10px"
+            },
+            "picker": "week",
+            "format": "YYYY-MM-DD",
+            "allowClear": true,
+            "bordered": true,
+            "showToday": true,
+            "autoFocus": false,
+            "disabled": false,
+            "inputReadOnly": false,
+            "showTime": false,
+            "locale": {
+              "lang": {
+                "placeholder": "请选择日期",
+                "yearPlaceholder": "请选择年份",
+                "quarterPlaceholder": "请选择季度",
+                "monthPlaceholder": "请选择月份",
+                "weekPlaceholder": "请选择周",
+                "rangePlaceholder": [
+                  "开始日期",
+                  "结束日期"
+                ],
+                "rangeYearPlaceholder": [
+                  "开始年份",
+                  "结束年份"
+                ],
+                "rangeMonthPlaceholder": [
+                  "开始月份",
+                  "结束月份"
+                ],
+                "rangeQuarterPlaceholder": [
+                  "开始季度",
+                  "结束季度"
+                ],
+                "rangeWeekPlaceholder": [
+                  "开始周",
+                  "结束周"
+                ],
+                "locale": "zh_CN",
+                "today": "今天",
+                "now": "此刻",
+                "backToToday": "返回今天",
+                "ok": "确定",
+                "timeSelect": "选择时间",
+                "dateSelect": "选择日期",
+                "weekSelect": "选择周",
+                "clear": "清除",
+                "month": "月",
+                "year": "年",
+                "previousMonth": "上个月 (翻页上键)",
+                "nextMonth": "下个月 (翻页下键)",
+                "monthSelect": "选择月份",
+                "yearSelect": "选择年份",
+                "decadeSelect": "选择年代",
+                "yearFormat": "YYYY年",
+                "dayFormat": "D日",
+                "dateFormat": "YYYY年M月D日",
+                "dateTimeFormat": "YYYY年M月D日 HH时mm分ss秒",
+                "previousYear": "上一年 (Control键加左方向键)",
+                "nextYear": "下一年 (Control键加右方向键)",
+                "previousDecade": "上一年代",
+                "nextDecade": "下一年代",
+                "previousCentury": "上一世纪",
+                "nextCentury": "下一世纪"
+              },
+              "timePickerLocale": {
+                "placeholder": "请选择时间",
+                "rangePlaceholder": [
+                  "开始时间",
+                  "结束时间"
+                ]
+              }
+            }
+          },
+          "docId": "docls4091sj",
+          "hidden": false,
+          "title": "",
+          "isLocked": false,
+          "condition": true,
+          "conditionGroup": ""
         }
       ]
     }
-  ]
+  ],
+  "i18n": {}
 }

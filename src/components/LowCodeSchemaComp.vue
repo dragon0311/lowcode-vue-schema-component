@@ -1,24 +1,24 @@
 <template>
-  <div>
-    <Suspense>
-      <template #default>
-        <VueRenderer
-          class="lowcode-plugin-sample-preview-content"
-          :schema="data.schema"
-          :components="data.components"
-        />
-      </template>
-      <template #fallback>
-        <div class="lowcode-plugin-sample-preview-loading">Loading...</div>
-      </template>
-    </Suspense>
-  </div>
+	<div>
+		<Suspense>
+			<template #default>
+				<VueRenderer
+					class="lowcode-plugin-sample-preview-content"
+					:schema="data.schema"
+					:components="data.components"
+				/>
+			</template>
+			<template #fallback>
+				<div class="lowcode-plugin-sample-preview-loading">Loading...</div>
+			</template>
+		</Suspense>
+	</div>
 </template>
 
 <script setup>
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
 import { buildComponents, AssetLoader, noop } from '@knxcloud/lowcode-utils';
-import { h, createApp, toRaw, Suspense, reactive } from 'vue';
+import { h, createApp, toRaw, Suspense, reactive } from '../../public/js/vue.runtime.global.js';
 
 window['__VUE_HMR_RUNTIME__'] = {
   reload: noop,
@@ -26,14 +26,24 @@ window['__VUE_HMR_RUNTIME__'] = {
   createRecord: noop,
 };
 
+const props = defineProps({
+  packages: [],
+  projectSchema: {}
+})
+
 const data = reactive({
 	schema: {},
 	components: {}
 })
 
 const init = async () => {
-  const packages = JSON.parse(window.localStorage.getItem('packages') || '[]');
-  const projectSchema = JSON.parse(window.localStorage.getItem('projectSchema') || '{}');
+  // const packages = JSON.parse(window.localStorage.getItem('packages') || '[]');
+  // const projectSchema = JSON.parse(window.localStorage.getItem('projectSchema') || '{}');
+  const packages = props.packages
+  const projectSchema = props.projectSchema
+
+
+  console.log('props', props);
   const { componentsMap: componentsMapArray = [], componentsTree = [] } = projectSchema;
 
   const componentsMap = {};
@@ -63,7 +73,7 @@ const init = async () => {
   data.schema = toRaw(schema);
 	data.components = toRaw(components);
 
-	console.log('data', data);
+  console.log('data', data);
   // const app = createApp(() => {
   //   return h('div', { class: 'lowcode-plugin-sample-preview' }, [
   //     h(Suspense, null, {
