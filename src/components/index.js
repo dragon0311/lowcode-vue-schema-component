@@ -1,9 +1,7 @@
 import LowCodePreview from './LowCodeSchemaComp.vue';
-import * as Vue from 'vue/dist/vue.esm-bundler';
 
-const install = async (App) => {
+const install = (App) => {
 	console.log('window.Vue', window.Vue);
-	window.Vue = Vue;
 	App.component(LowCodePreview.name, LowCodePreview);
 };
 

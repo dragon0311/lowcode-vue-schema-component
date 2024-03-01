@@ -1,7 +1,7 @@
 {
   "name": "lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "lowcode-vue的schema组件",
   "main": "lib/index.js",
   "author": "ChenYang",

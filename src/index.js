@@ -2,7 +2,7 @@
 // @ts-nocheck
 import { createApp } from 'vue';
 import App from './App.vue';
-import LowCodePreview from 'lowcode-vue-schema-component'
+import LowCodePreview from '../lib/index.js'
 
 const app = createApp(App);
 app.use(LowCodePreview)

@@ -18,7 +18,7 @@
 <script setup>
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
 import { buildComponents, AssetLoader, noop } from '@knxcloud/lowcode-utils';
-import { h, createApp, toRaw, Suspense, reactive } from '../../public/js/vue.runtime.global.js';
+import { h, createApp, toRaw, Suspense, reactive } from 'vue';
 
 window['__VUE_HMR_RUNTIME__'] = {
   reload: noop,
