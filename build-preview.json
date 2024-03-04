@@ -1,0 +1,9 @@
+{
+  "entry": "./example/index.js",
+  "publicPath": "./example",
+  "vendor": false,
+  "plugins": [
+    "build-plugin-react-app",
+    "./build-preview.plugin.js"
+  ]
+}

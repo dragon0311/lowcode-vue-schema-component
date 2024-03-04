@@ -1,4 +1,4 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const path = require('path');
 
@@ -26,28 +26,15 @@ module.exports = ({ onGetWebpackConfig }) => {
 
     config.plugin('vue-loader-plugin').use(VueLoaderPlugin);
     // config.merge({
-    //   output: {
-    //     path: path.resolve(__dirname, 'lib'),
-    //     publicPath: '/lib/',
-    //     filename: 'index.js',  // 输出文件名
-    //     library: 'lowcode-vue-schema-component',
-    //     libraryTarget: 'umd'
-    //   },
-    // });
-    // config.merge({
     //   devtool: 'source-map',
     // })
 
-    config.plugin('copy-webpack-plugin').use(CopyWebpackPlugin, [{
-      patterns: [
-        { from: 'src', to: 'lib' }, // 指定要复制的JS文件夹路径和目标文件夹
-      ],
-    }]);
-
-    config.resolve.merge({
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
+    config.plugin('html').use(HtmlWebpackPlugin, [
+      {
+        inject: false,
+        template: require.resolve('./public/index.html'),
+        filename: 'index.html',
       },
-    });
+    ]);
   });
 };

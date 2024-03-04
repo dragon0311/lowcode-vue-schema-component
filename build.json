@@ -1,7 +1,7 @@
 {
-  "entry": "./src/components/index.js",
+  "entry": "./src/index.js",
   "publicPath": "/",
-  "outputDir": "lib",
+  "outputDir": "dist",
   "vendor": false,
   "plugins": [
     "build-plugin-react-app",

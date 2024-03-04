@@ -1,9 +1,9 @@
 {
   "name": "lowcode-vue-schema-component",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "lowcode-vue的schema组件",
-  "main": "lib/index.js",
+  "main": "dist/lib/index.js",
   "author": "ChenYang",
   "license": "ISC",
   "keywords": [
@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "node ./scripts/start.mjs",
-    "start": "build-scripts start --disable-reload --port 5557",
+    "start": "build-scripts start --config build-preview.json --disable-reload --port 5557",
     "build": "build-scripts build"
   },
   "dependencies": {
@@ -25,7 +25,6 @@
     "vue-loader": "^17.4.2"
   },
   "devDependencies": {
-    "lowcode-vue-schema-component": "0.0.6",
     "@alib/build-scripts": "^0.1.32",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
@@ -34,11 +33,13 @@
     "build-plugin-moment-locales": "^0.1.3",
     "build-plugin-react-app": "^1.8.5",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "6",
     "css-loader": "^6.10.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "lowcode-vue-schema-component": "0.0.6",
     "postcss": "8.4.14",
     "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
