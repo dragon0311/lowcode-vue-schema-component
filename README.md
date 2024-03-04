@@ -1,11 +1,11 @@
-# Lowcode Vue Schema Components
+# Lowcode Vue Schema Component
 
-lowcode-vue-engine 的 schema 预览组件
+KNXCloud/lowcode-engine-vue 的 schema 预览组件
 
 ## Install
 
 ```
-	npm install lowcode-vue-schema-components --save
+npm install lowcode-vue-schema-component --save
 ```
 
 ## Usage
@@ -15,10 +15,10 @@ lowcode-vue-engine 的 schema 预览组件
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
-import LowcodeVueSchemaComponents from 'lowcode-vue-schema-components';
+import LowcodeVueSchemaComponent from 'lowcode-vue-schema-component';
 
 const app = createApp(App);
-app.use(LowcodeVueSchemaComponents); // 注册组件
+app.use(LowcodeVueSchemaComponent); // 注册组件
 app.mount('#app');
 ```
 
@@ -42,7 +42,7 @@ const projectSchema = {...} // 依据alibaba/lowcode-engine规定的schema协议
 export default {
   name: 'App',
   components: {
-    Suspense, // 因为LowcodeVueSchemaComponents是异步组件，所以需要使用Suspense包裹
+    Suspense, // 因为LowcodeVueSchemaComponent是异步组件，所以需要使用Suspense包裹
   },
 }
 </script>
@@ -70,7 +70,12 @@ KNXCloud/lowcode-engine-vue 基于阿里 lowcode-engine 定制的 vue 版本
 
 ## Authors
 
-<img src="https://avatars.githubusercontent.com/u/36907441?v=4" alt="dragon0311" width="40" height="40" style="border-radius: 50%">
+<div style="display: flex; align-items: center">
+<img src="https://avatars.githubusercontent.com/u/36907441?v=4" alt="dragon0311" width="40" height="40" style="border-radius: 50%; margin-right: 8px">
+<a style="font-weight: bold;" src="https://github.com/dragon0311">
+dragon0311</a>
+
+</div>
 
 ## License
 
