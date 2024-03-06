@@ -3,11 +3,10 @@ import * as vue from 'vue/dist/vue.cjs'
 import VueRenderer from '@knxcloud/lowcode-vue-renderer';
 
 const install = (App) => {
-	window.Vue = vue
+	if (typeof window !== 'undefined' && !window.Vue) {
+		window.Vue = vue
+	}
 	window.LCVueRenderer = VueRenderer;
-	console.log('window.Vue', window.Vue);
-	console.log('window.LCVueRenderer', window.LCVueRenderer);
-
 	App.component(LowCodePreview.name, LowCodePreview);
 }
 

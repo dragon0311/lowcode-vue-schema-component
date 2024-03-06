@@ -28,7 +28,7 @@ window['__VUE_HMR_RUNTIME__'] = {
 
 const props = defineProps({
   packages: [],
-  projectSchema: {}
+  pageSchema: {}
 })
 
 const data = reactive({
@@ -38,13 +38,13 @@ const data = reactive({
 
 const init = async () => {
   // const packages = JSON.parse(window.localStorage.getItem('packages') || '[]');
-  // const projectSchema = JSON.parse(window.localStorage.getItem('projectSchema') || '{}');
+  // const pageSchema = JSON.parse(window.localStorage.getItem('pageSchema') || '{}');
   const packages = props.packages
-  const projectSchema = props.projectSchema
+  const pageSchema = props.pageSchema
 
 
   console.log('props', props);
-  const { componentsMap: componentsMapArray = [], componentsTree = [] } = projectSchema;
+  const { componentsMap: componentsMapArray = [], componentsTree = [] } = pageSchema;
 
   const componentsMap = {};
   componentsMapArray.forEach((component) => {
