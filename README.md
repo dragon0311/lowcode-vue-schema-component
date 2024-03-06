@@ -27,14 +27,14 @@ app.mount('#app');
 ```js
 <template>
 	<Suspense>
-		<LowCodePreview :packages="packages" :projectSchema="projectSchema" />
+		<LowCodePreview :packages="packages" :pageSchema="pageSchema" />
 	</Suspense>
 </template>
 
 <script setup>
 import { Suspense } from 'vue'
 const packages = [...] // 依据alibaba/lowcode-engine规定的package协议文本
-const projectSchema = {...} // 依据alibaba/lowcode-engine规定的schema协议文本
+const pageSchema = {...} // 依据alibaba/lowcode-engine规定的schema协议文本
 
 </script>
 

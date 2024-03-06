@@ -1,18 +1,18 @@
 <template>
 	<Suspense>
-		<LowCodePreview :packages="packages" :projectSchema="projectSchema" />
+		<LowCodePreview :packages="packages" :pageSchema="pageSchema" />
 	</Suspense>
 </template>
 
 <script setup>
 import { Suspense } from 'vue/dist/vue.esm-browser'
 const packages = [{ package: 'lowcode-material-ant-vue', version: '0.1.1', library: 'LowcodeMaterialAntVue', urls: ['http://10.13.4.153:9000/lowcode-resource/lowcode-material-ant-vue_v0.1.1/index.css', 'http://10.13.4.153:9000/lowcode-resource/lowcode-material-ant-vue_v0.1.1/index.js'] }]
-const projectSchema = ProjectSchema
+const pageSchema = PageSchema
 
 </script>
 
 <script>
-import ProjectSchema from './assets/schema.json'
+import PageSchema from './assets/schema.json'
 
 export default {
   name: 'App',
